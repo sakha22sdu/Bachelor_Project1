@@ -4,11 +4,8 @@ import org.tinylog.Logger;
 import org.variantsync.diffdetective.analysis.Analysis;
 import org.variantsync.diffdetective.datasets.Repository;
 import org.variantsync.diffdetective.variation.diff.VariationDiff;
-import org.variantsync.diffdetective.variation.diff.DiffNode;
 import org.variantsync.diffdetective.editclass.EditClass;
 import org.variantsync.diffdetective.editclass.proposed.ProposedEditClasses;
-import org.variantsync.diffdetective.editclass.proposed.Refactoring;
-import org.variantsync.diffdetective.editclass.proposed.Reconfiguration;
 import org.eclipse.jgit.revwalk.RevCommit;
 
 import java.io.BufferedWriter;
@@ -20,7 +17,6 @@ import java.nio.file.Paths;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 public class MyAnalysis implements Analysis.Hooks {
 
     private static Path outputDirectory;
@@ -28,8 +24,6 @@ public class MyAnalysis implements Analysis.Hooks {
 
     private BufferedWriter analysisWriter;
     private BufferedWriter messageWriter;
-    private int commits = 0;
-
     @Override
     public void initializeResults(Analysis analysis) {
         try {
@@ -58,7 +52,6 @@ public class MyAnalysis implements Analysis.Hooks {
 
     @Override
     public boolean beginCommit(Analysis analysis) {
-        commits++;
         return true;
     }
 
@@ -79,7 +72,7 @@ public class MyAnalysis implements Analysis.Hooks {
                 // Write analysis line to file only
                 if (analysisWriter != null) {
                     analysisWriter.write("Commit: " + commitId
-                            + " | Type: " + (classification != null ? classification.getName() : "Unknown")
+                            + " | Type: " + classification
                             + " | Bug-related: " + isBug
                             + " | Message: " + message.replace("\n", " ")
                             + "\n");
@@ -101,21 +94,18 @@ public class MyAnalysis implements Analysis.Hooks {
         return true;
     }
 
-    /**
-     * Classify the diff as Refactoring, Reconfiguration, or Other.
-     */
     private EditClass classifyDiff(VariationDiff<?> diff) {
         try {
-            for (DiffNode<?> node : diff.computeAllNodesThat(n -> n.isArtifact())) {
+            // Loop through all artifact nodes in this diff
+            for (org.variantsync.diffdetective.variation.diff.DiffNode<?> node :
+                    diff.computeAllNodesThat(n -> n.isArtifact())) {
+
                 EditClass editClass = ProposedEditClasses.Instance.match(node);
                 if (editClass == null) continue;
 
-                // Check known edit classes using instanceof (since Reconfiguration is package-private)
-                if (editClass.getName().equalsIgnoreCase("Refactoring")) {
-                    Logger.info("Classified as Refactoring");
-                    return editClass;
-                } else if (editClass.getName().equalsIgnoreCase("Reconfiguration")) {
-                    Logger.info("Classified as Reconfiguration");
+                // Check if the editClass matches known types
+                if (editClass.equals(ProposedEditClasses.Refactoring)
+                        || editClass.equals(ProposedEditClasses.Reconfiguration)) {
                     return editClass;
                 }
             }
@@ -123,8 +113,8 @@ public class MyAnalysis implements Analysis.Hooks {
             Logger.error("Error classifying diff: {}", e.getMessage());
         }
 
-        // If no match found, return Unknown
-        return ProposedEditClasses.Instance.Unknown;
+        // If no match found
+        return null;
     }
 
     private boolean isBugRelated(String message) {
@@ -137,6 +127,7 @@ public class MyAnalysis implements Analysis.Hooks {
                 lower.contains("defect");
     }
 
+    
     @Override
     public void endBatch(Analysis analysis) throws Exception {
         Logger.info("Analysis complete — {} unique commits analyzed.", writtenCommits.size());
