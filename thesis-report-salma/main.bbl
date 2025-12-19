@@ -1,0 +1,136 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{Bittner2022_edits}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=badde269026fec0c6e5a2d81a0fe3b68}{%
+           family={Bittner},
+           familyi={B\bibinitperiod},
+           given={Paul\bibnamedelima Maximilian},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=3e7722b45834b004393e094b03b46018}{%
+           family={Tinnes},
+           familyi={T\bibinitperiod},
+           given={Christof},
+           giveni={C\bibinitperiod}}}%
+        {{hash=cb68230073da45449d90e3e2326e0582}{%
+           family={Schultheiß},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b9cdfd5d07435c8c6ac20af227339fde}{%
+           family={Viegener},
+           familyi={V\bibinitperiod},
+           given={Sören},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d79290f008da09d20408215ad85245d3}{%
+           family={Kehrer},
+           familyi={K\bibinitperiod},
+           given={Timo},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d37a977a0f05c75ccc2786607cead2dd}{%
+           family={Thüm},
+           familyi={T\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore, Singapore}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{fullhash}{301150411e85d47ff7f32d70d88661db}
+      \strng{bibnamehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{authorbibnamehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{authornamehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{authorfullhash}{301150411e85d47ff7f32d70d88661db}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}
+      \field{series}{ESEC/FSE 2022}
+      \field{title}{Classifying edits to variability in source code}
+      \field{year}{2022}
+      \field{pages}{196\bibrangedash 208}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/3540250.3549108
+      \endverb
+    \endentry
+    \entry{Wohlin2024_experimentationInSE}{book}{}
+      \name{author}{6}{}{%
+        {{hash=e1ce15e2eeb53e3fc8c6035fd761594b}{%
+           family={Wohlin},
+           familyi={W\bibinitperiod},
+           given={Claes},
+           giveni={C\bibinitperiod}}}%
+        {{hash=306f73791e107dd9b83d45ee22e6b523}{%
+           family={Runeson},
+           familyi={R\bibinitperiod},
+           given={Per},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4d1752e9463ffc1043c0939de72a9097}{%
+           family={Höst},
+           familyi={H\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5dad21e576e61668b8797b95088d02dd}{%
+           family={Ohlsson},
+           familyi={O\bibinitperiod},
+           given={Magnus\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=8eecf1f137629fc30fb7258aa4b03ffc}{%
+           family={Regnell},
+           familyi={R\bibinitperiod},
+           given={Björn},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7eba9f830d70baeeae41735c97bbd8b2}{%
+           family={Wesslén},
+           familyi={W\bibinitperiod},
+           given={Anders},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{55ccf4d2f8f1d35fa125fcc569510989}
+      \strng{fullhash}{01ecfd973289c2623ca22a0b0b032dcf}
+      \strng{bibnamehash}{55ccf4d2f8f1d35fa125fcc569510989}
+      \strng{authorbibnamehash}{55ccf4d2f8f1d35fa125fcc569510989}
+      \strng{authornamehash}{55ccf4d2f8f1d35fa125fcc569510989}
+      \strng{authorfullhash}{01ecfd973289c2623ca22a0b0b032dcf}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Experimentation in Software Engineering, Second Edition}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.1007/978-3-662-69306-3
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

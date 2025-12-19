@@ -1,0 +1,5 @@
+analysis: MyAnalysis
+repository: libssh
+total commits: 0
+#Error[a line continuation was detected but there are no more lines]: 16
+#Error[the extracted formula cannot be parsed]: 3

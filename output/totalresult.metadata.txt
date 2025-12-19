@@ -1,0 +1,8 @@
+analysis: MyAnalysis
+repository: libssh
+runtime with multithreading in seconds: 45.2
+total commits: 5352
+#Error[a line continuation was detected but there are no more lines]: 97
+#Error[not all annotations closed]: 34
+#Error[the extracted formula cannot be parsed]: 6
+#Error[#else or #elif without #if]: 4

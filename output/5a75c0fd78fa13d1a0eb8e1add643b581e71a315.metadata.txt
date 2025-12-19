@@ -1,0 +1,6 @@
+analysis: MyAnalysis
+repository: libssh
+total commits: 0
+#Error[a line continuation was detected but there are no more lines]: 48
+#Error[not all annotations closed]: 34
+#Error[#else or #elif without #if]: 2

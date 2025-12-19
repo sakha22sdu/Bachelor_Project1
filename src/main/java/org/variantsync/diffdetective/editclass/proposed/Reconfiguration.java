@@ -14,7 +14,7 @@ import static org.variantsync.diffdetective.variation.diff.Time.BEFORE;
  * Our Reconfiguration edit class from the ESEC/FSE'22 paper.
  * @author Paul Bittner, Sören Viegener
  */
-final class Reconfiguration extends EditClass {
+public final class Reconfiguration extends EditClass {
     Reconfiguration() {
         super("Reconfiguration", DiffType.NON);
     }

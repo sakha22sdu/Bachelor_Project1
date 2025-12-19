@@ -1,0 +1,8 @@
+analysis: MyAnalysis
+repository: gimp
+total commits: 0
+#Error[#endif without #if]: 1
+#Error[could not obtain full diff]: 9
+#Error[not all annotations closed]: 23
+#Error[a line continuation was detected but there are no more lines]: 27
+#Error[the extracted formula cannot be parsed]: 71

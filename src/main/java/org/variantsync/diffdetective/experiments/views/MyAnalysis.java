@@ -6,17 +6,21 @@ import org.variantsync.diffdetective.datasets.Repository;
 import org.variantsync.diffdetective.variation.diff.VariationDiff;
 import org.variantsync.diffdetective.editclass.EditClass;
 import org.variantsync.diffdetective.editclass.proposed.ProposedEditClasses;
+
 import org.eclipse.jgit.revwalk.RevCommit;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 public class MyAnalysis implements Analysis.Hooks {
 
     private static Path outputDirectory;
@@ -24,6 +28,7 @@ public class MyAnalysis implements Analysis.Hooks {
 
     private BufferedWriter analysisWriter;
     private BufferedWriter messageWriter;
+    
     @Override
     public void initializeResults(Analysis analysis) {
         try {
@@ -45,6 +50,7 @@ public class MyAnalysis implements Analysis.Hooks {
             writtenCommits.clear();
 
             Logger.info("Initialized output files: {}, {}", analysisFile, messageFile);
+
         } catch (IOException e) {
             Logger.error("Failed to initialize log files: {}", e.getMessage());
         }
@@ -61,25 +67,28 @@ public class MyAnalysis implements Analysis.Hooks {
             RevCommit commit = analysis.getCurrentCommit();
             VariationDiff<?> diff = analysis.getCurrentVariationDiff();
             String commitId = commit.getId().getName();
-
+            
             if (!writtenCommits.contains(commitId)) {
                 writtenCommits.add(commitId);
-
+                
                 String message = commit.getFullMessage().trim();
+                
                 EditClass classification = classifyDiff(diff);
                 boolean isBug = isBugRelated(message);
 
-                // Write analysis line to file only
+                // Write simple analysis line
                 if (analysisWriter != null) {
-                    analysisWriter.write("Commit: " + commitId
-                            + " | Type: " + classification
-                            + " | Bug-related: " + isBug
-                            + " | Message: " + message.replace("\n", " ")
-                            + "\n");
+                    analysisWriter.write(
+                        "Commit: " + commitId +
+                        " | Type: " + classification +
+                        " | Bug-related: " + isBug +
+                        " | Message: " + message.replace("\n", " ") +
+                        "\n"
+                    );
                     analysisWriter.flush();
                 }
 
-                // Also store plain commit message
+                // Store plain message
                 if (messageWriter != null) {
                     messageWriter.write("Commit ID: " + commitId + "\n");
                     messageWriter.write(message + "\n\n");
@@ -95,15 +104,15 @@ public class MyAnalysis implements Analysis.Hooks {
     }
 
     private EditClass classifyDiff(VariationDiff<?> diff) {
+        EditClass editClass = null;
+
         try {
-            // Loop through all artifact nodes in this diff
             for (org.variantsync.diffdetective.variation.diff.DiffNode<?> node :
                     diff.computeAllNodesThat(n -> n.isArtifact())) {
 
-                EditClass editClass = ProposedEditClasses.Instance.match(node);
+                editClass = ProposedEditClasses.Instance.match(node);
                 if (editClass == null) continue;
 
-                // Check if the editClass matches known types
                 if (editClass.equals(ProposedEditClasses.Refactoring)
                         || editClass.equals(ProposedEditClasses.Reconfiguration)) {
                     return editClass;
@@ -113,21 +122,19 @@ public class MyAnalysis implements Analysis.Hooks {
             Logger.error("Error classifying diff: {}", e.getMessage());
         }
 
-        // If no match found
-        return null;
+        return editClass;
     }
 
     private boolean isBugRelated(String message) {
         if (message == null) return false;
         String lower = message.toLowerCase();
-        return lower.contains("bug") ||
-                lower.contains("fix") ||
-                lower.contains("error") ||
-                lower.contains("issue") ||
-                lower.contains("defect");
+        return lower.contains("bug")
+                || lower.contains("fix")
+                || lower.contains("error")
+                || lower.contains("issue")
+                || lower.contains("defect");
     }
 
-    
     @Override
     public void endBatch(Analysis analysis) throws Exception {
         Logger.info("Analysis complete — {} unique commits analyzed.", writtenCommits.size());

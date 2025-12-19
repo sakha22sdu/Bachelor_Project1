@@ -1,0 +1,52 @@
+%! BibTeX Compiler = biber
+
+\documentclass[chapterprefix,a4paper,
+openany,
+10pt,
+reqno, 
+bibliography=totoc,listof=totoc,index=totoc,%
+fleqn,twoside]{book}
+
+\include{includes.tex}
+\include{formatting.tex}
+
+
+\title{Analysis of Real-World Developer Mistakes 
+in configurable software systems}
+\author{Salma Khair}
+\date{01 January 2026}
+
+%\addbibresource{references.bib} %Import the bibliography file
+\usepackage{subfiles} % Best loaded last in the preamble
+
+\begin{document}
+
+    \pagenumbering{roman}
+    \input{title/title.tex}
+
+    \tableofcontents
+
+    \setlength{\parskip}{\baselineskip}
+    \setlength{\parindent}{0pt}
+
+    \clearpage
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+
+	\begingroup
+		\pagestyle{fancy}
+	  	\input{chapters/1_introduction.tex}
+	  	\input{chapters/2_background.tex}
+	  	\input{chapters/3_implementation.tex}
+	  	\input{chapters/4_evaluation.tex}
+	  	\input{chapters/5_conclusion.tex}
+	\endgroup
+  	
+  	\appendix
+  	\listoffigures
+  	\listoftables
+  	
+%    \printglossary[type=\acronymtype]
+%    \printglossary
+    \printbibliography
+\end{document}

@@ -630,4 +630,9 @@ public class Analysis {
         final String prettyMetadata = metadata.exportTo(outputFile);
         Logger.info("Metadata:\n{}", prettyMetadata);
     }
+
+    public void execute() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'execute'");
+    }
 }

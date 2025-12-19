@@ -12,10 +12,10 @@ public class Main {
             new VariationDiffParseOptions(true, false);
 
     public static void main(String[] args) {
-        Path repoPath = Paths.get("repositories/xterm");
+        Path repoPath = Paths.get("repositories/gimp");
         Path outputDir = Paths.get("output");
 
-        System.out.println("Running MyAnalysis on xterm...");
+        System.out.println("Running MyAnalysis on gimp...");
 
         Repository repo = Repository.fromDirectory(repoPath, repoPath.getFileName().toString());
         

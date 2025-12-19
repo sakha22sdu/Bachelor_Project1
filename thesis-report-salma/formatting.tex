@@ -1,0 +1,65 @@
+\usepackage{titlesec}
+\newcommand{\hsp}{\hspace{25pt}}
+\newcommand{\lineindent}{\hspace*{0.4cm}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% chapter header and footer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhead[LE]{\leftmark}
+\fancyhead[LO,RE]{}
+\fancyhead[RO]{\rightmark}
+\fancyfoot[CE,CO]{}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% chapter titles
+%%%%%%%%%%%%%%%%%%%
+\titleformat
+{\chapter}
+	{\Large\bfseries}	% format
+	{ \textsl{\textcolor{gray}{Chapter \thechapter}}\hsp \vspace{1ex} } 	% label
+	{1.1ex} 			% sep	
+	{ \noindent\filright }
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\graphicspath{{figures/}}
+
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	citecolor=blue
+}
+
+
+\bibstyle{alpha}
+\addbibresource{references.bib} %Import the bibliography file
+
+%% glossaries
+%\makeglossaries
+%
+%\newglossaryentry{test}
+%{
+%	name=testEntry,
+%	description={This is a test entry for testing glossaries}
+%}
+
+
+
+\renewcommand{\chapterautorefname}{Chapter}
+\renewcommand{\sectionautorefname}{Section}
+\renewcommand{\subsectionautorefname}{Section}
+\renewcommand{\subsubsectionautorefname}{Section~\thesubsection,}
+\def\subfigureautorefname{Figure}
+\def\figureautorefname{Figure}
+
+\newcommand{\todoi}[1]{\todo[inline]{#1}}
+\newcommand{\defineReviewCommands}[2]{
+	\expandafter\def\csname#1\endcsname##1{\todo[color=#2]{##1 -#1}}%%%
+	\expandafter\def\csname#1i\endcsname##1{\todo[inline,caption={},color=#2]{##1 -#1}}%%%
+}
+
+\defineReviewCommands{sg}{blue!20}

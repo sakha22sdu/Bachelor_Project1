@@ -18,6 +18,8 @@ import java.util.List;
 public class CommitDiff {
     public final static String INVALID_COMMIT_HASH = "none";
 
+    public final String commit = null;
+
     /**
      * A list of all {@link PatchDiff PatchDiffs} of a {@link CommitDiff}.
      */

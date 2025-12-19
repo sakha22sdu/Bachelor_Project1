@@ -1,0 +1,100 @@
+\chapter{Background and State-Of-The-Art}
+\label{chp:background}
+
+
+
+\section{Variable Software Development}
+\label{sec:background_jolie_syntax}
+
+% What are variable/configurable software systems? 
+% How are they typically implemented in real-world?
+% Do Compuer Scientist have a good understanding about them?
+Moderns software systems are rarely developed as a single, fixed program with one
+well defined behavior.  
+Instead, many systems are designed as configurable systems in order to support
+different platforms, environments and user or customer requirements within a
+single code base.  
+Rather than maintaining multiple separate implementation for each possible
+variant, developers introduce variability into the software itself, allowing
+different configurations to be derived from the same source code.
+
+This approach is widely used in the real world software development.  
+Operating systems, system libraries, embedded software and server application
+often need to adapt to different hardware architecture, operating system,
+performance requirements or optional features.  
+For example, an operating system kernel may include different code depending on
+whether it is built for a specific processor architecture, while a network server
+may enable or disable certain features based on configuration options.  
+Supporting such variability within a single code base makes it possible to reuse
+large parts of the implementation and reduces the need to maintain separate forks
+of the same system.
+
+At the same time, configurability introduces additional complexity.  
+Reasoning about a single program, developers must consider a potentially large
+number of software variants.  
+Each configuration represents a specific combination of features and may include
+or exclude different parts of the code.  
+In large systems, the number of valid configurations can easily grow into the
+thousands or even millions, making it infeasible to test or inspect each variant
+individually.  
+As a result, developers typically reason about variability symbolically rather
+than concretely, relying on conditions that describe when certain code should be
+active.
+
+In practice, variability is often implemented using conditional code.  
+In languages such as C and C++, this is commonly done through preprocessor
+directives such as \texttt{\#if}, \texttt{\#ifdef}, and \texttt{\#ifndef}.  
+These directives are used to guard code fragments with logical conditions, also
+referred to as presence conditions.  
+A presence condition describes when a specific piece of code becomes part of a
+software variant.  
+In practice, such conditions are often expressed as logical expressions and can be
+combined to represent more complex configuration rules.
+
+While conditional compilation is a powerful mechanism, it also makes the code
+harder to understand and maintain.  
+Small changes to a presence condition can have far reaching consequences, as they
+may affect many configurations at once.  
+Developers working on a specific change often focus on the configuration they are
+currently interested in and may not be fully aware of how the same change impacts
+other variants of the system.  
+This makes configurable software particularly open to subtle and unintended
+errors.
+
+The complexity introduced by variability becomes especially apparent during
+software evolution.  
+As systems evolve over time, developers continuously modify, extend and refactor
+code.  
+In configurable systems, such edits not only change the implementation itself but
+may also alter the structure of variability, that is, the relationship between
+features, conditions, and code fragments.  
+For example, a seemingly minor modification to a conditional expression can
+unintentionally expand or restrict the set of configurations in which a piece of
+code is active.
+
+These effects are often not visible in standard version control diffs, which
+typically represent changes as simple additions or deletions of lines of code.  
+As a result, developers may overlook important changes to variability, leading to
+configuration-specific faults that are difficult to detect and diagnose.  
+Understanding how changes to presence conditions affect the overall variability
+of a system is therefore crucial for maintaining the correctness and reliability
+of configurable software.
+
+
+\subsection{Principles of Software Product Lines}
+% What is a feature?
+% What is a configuration and a software product?
+%
+
+\subsection{Classification of Edits to Configurable Software}
+
+Edits to variable software can fully classified in 8 categories~\cite{Bittner2022_edits}.
+
+\section{Principles of Natural Language Processing}
+
+\subsection{Basics}
+
+% What is the idea behind NLP?
+% What techniques can be used to get information of
+
+\subsection{Topic Modeling}

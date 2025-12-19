@@ -60,7 +60,7 @@ public class AnalysisRunner {
         /**
          * Creates options with the given parameters and uses default
          * values for all other parameters.
-         * @see Options#Options(Path, Path, Path, Function, Function, boolean, boolean)
+         * @see Options# Options(Path, Path, Path, Function, Function, boolean, boolean)
          * @see Options#DEFAULT(String[])
          */
         public Options(Path repositoriesDirectory,

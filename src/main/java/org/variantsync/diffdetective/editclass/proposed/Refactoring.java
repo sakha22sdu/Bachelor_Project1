@@ -13,7 +13,7 @@ import static org.variantsync.diffdetective.variation.diff.Time.BEFORE;
  * Our Refactoring edit class from the ESEC/FSE'22 paper.
  * @author Paul Bittner, Sören Viegener
  */
-final class Refactoring extends EditClass {
+public final class Refactoring extends EditClass {
     Refactoring() {
         super("Refactoring", DiffType.NON);
     }
