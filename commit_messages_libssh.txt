@@ -1,0 +1,2131 @@
+==== Commit Messages ====
+
+Commit ID: 5a75c0fd78fa13d1a0eb8e1add643b581e71a315
+Don't leak memory in agent_new() error path.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@378 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 41dd2a2a3bc58409451b634ca9646d37fa6385d1
+Check return values of option setter.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@377 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2aa81c054402404e8fe061a612096533ce0c3453
+Add memory error checks for strdup().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@376 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0856ba3008efb40fcc7d10ba4b2fcd15e7105456
+Add memory error checks.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@375 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8d66a455f7bc796cf21ab5fb37c70d01920739b2
+Add my copyright.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@374 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a4d98b58fc5d6efe86136bcf4b44fb8250bd2921
+Improve the documentation of ssh_options_getopt().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@373 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 497c31d9a0b280376e90d46f28977e5454e5c7e9
+Improve ssh_options_getopt().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@372 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4db7fc77ff1fd2768bec59892098007821f5802d
+Improve and document ssh_options_set_[dsa,rsa]_server_key().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@371 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3b7940d05e573bcccf3b2d69fcab4d6a11cb4c1b
+Improve ssh_options_set_auth_callback().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@370 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2afc8a4f1cf4debd3b7437bc64554a1ab0e45fa9
+Improve ssh_options_set_log_verbosity().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@369 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: da65ee4dbba6539ed92a28b5d6451b8f174ddcb8
+Improve ssh_options_set_log_function().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@368 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0dee53353150b1d535d1eec6d1b61a0e9bf22592
+Improve ssh_options_allow_ssh2().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@367 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 396db49a41444f72cd9635c1b602e667ff7a729a
+Improve ssh_options_allow_ssh1().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@366 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 94e91b73f78218c586111c60c3df30bb82741c7a
+Fix typo.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@365 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 115450ac9bba5edcb2a9d57f01054c7e997fe61c
+Improve ssh_options_set_timeout().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@364 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: eb461d1dbe21f70d9d33b0d21a6af7d6ff9c9a11
+Improve ssh_options_set_status_callback().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@363 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cfea89fb7c7fe8482e3a6fadbd6595f2d552ed87
+Improve ssh_options_default_known_hosts_file().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@362 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5309651849d87300efd776395ea097df14391597
+Improve ssh_options_default_ssh_dir().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@361 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 30b02325cbb369e92e7f4ee7763afdf07aa6e78b
+Improve ssh_options_default_username().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@360 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1fceffa4348b0e13c7590b0afd3ababfabe0d2ef
+Improve ssh_options_set_wanted_algos().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@359 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3f4c1976fd19bf3cd47502b422c691b6d4b1ed12
+Improve ssh_options_set_banner().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@358 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a459a8b4dbc9b391b6080fcdc0a38ca32a3f6a4c
+Improve ssh_options_set_identity().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@357 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4d203e8420b0be0a3cd327f0ab9dc688fed54026
+Fix memory leaks.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@356 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5ba2acde0aa899db94cdf18bf0a0d32071e58405
+Improve ssh_options_set_known_hosts_file().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@355 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9ea6ea581d655d81d40efc7c678e8e1f036d533d
+Improve ssh_options_set_ssh_dir().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@354 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4373fc64e345a994d2a207ddc7f1a11859ec7176
+Improve ssh_options_set_bind().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@353 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b6fbe97f24f8f8cffdb467f90a2c42d0f36cedfb
+Improve ssh_options_set_fd().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@352 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d86ac9e04bc5511f7c45406c6cf6e48d43de3626
+Improve ssh_options_set_port().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@351 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 71913c8fea05f4e90277642265667c312f4831ee
+Add missing argument checks for options.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@350 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8de3dc44ca3dc4285d34925be5a7b4fee8e95408
+Improve ssh_options_set_username().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@349 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ab54736b5d41df8588d3754f6b68e2c4c762413f
+Make ssh_options_free() documentation public.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@348 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6026de46486913c40a9469267c429b2dfa57d806
+Improve ssh_options_set_host().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@347 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a9ef024f1045f696e424c77d7bbde8ce324916ac
+Make ssh_options_free() public.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@346 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 595a5d9ff2e53e96ecb3ee5797e35345b627c258
+Improve ssh_options_copy() and ssh_options_free().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@345 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 356a8a7631ddce16d545c9b898ef74ab165693fd
+Add error checking for strdup.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@344 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9f581a2809a08a4044f12c01656288a58193b2cb
+Add error checking of strdup.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@343 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d60783eeb7cb53b08b96b12114b6d88bab1bbf8f
+Improve ssh_send_banner() and add error checking of strdup.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@342 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ae4265d3048b1bd5d417980aabf1c180ab2a81e1
+Add a return value to ssh_userauth_kbdint_setanswer().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@341 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ee3b641fb1f4a7a1d8e78cf6d549469be6cdab21
+Cleanup todo's.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@340 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c195e0fa7d66b0d279686cf9f82fe35d0e1f7c89
+There is no file to close here.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@339 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f8d5bb9785cd3aa36cfe95609230993f1fbfad52
+Fix string_new().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@338 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3a67aaa4284f785fa284b14a036d4913939cd170
+Improve the ssh_get_pubkey_hash() function.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@337 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4c84a3e0f22925b18731fb68583067f6f6e6fe58
+Simply return 0.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@336 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ff0f8b760850a734bc0c92fe1ebc55deeecb5a70
+Use memset cause something is wrong with the macro.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@335 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9ff4afa523056b41bd0d2fdd85409a9f23a13a85
+Fix ssh connection.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@334 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 10397d44db3c7ed17b194cdeaf3ba04e9602957c
+Add one missing memory error check in crypt.c.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@333 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fc73b0b33fbd787f10c370e8bc12946104ef376a
+Add NULL check to buffer free.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@332 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7b464d4e158e90ddfdd70b88694ba2a039f271b9
+Improve ssh_new().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@331 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 891539af6cbdbdfabb8d37fb491f7f8cadf9823c
+Add memory error checks for crypto wrapper functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@330 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1b627b386763e22a7b8f7a7c8de9610c1da56cd2
+More memory error checks for ssh_socket_new().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@329 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b06c167775ec3aac00ba52935c07ce4b1520721b
+Fix memory error checking in socket functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@328 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ace6eed6c0c5e3493c58106cc0e698b92b7835f6
+Add memory error checking for sftpserver functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@327 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cde3151634361e043340cbaef8e5fb04367a5b3d
+Fix typo.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@326 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cd4df00dff9b42c53a361ff041f856782deb9126
+Add memory error checks for sftp functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@325 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b2e50e8967b43dff023dda9689881ff2ddfeec92
+Add memory error checks for server functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@324 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2c3e423480a1ae1db88dd644b062d1cc615d911b
+Add memory error checking for packet functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@323 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8bcd65193c51be8ac94b9b7691253aeecb446265
+Added memory error checks for option functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@322 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 54ce86e3b13750d5f49cc9c5e3cacaae74f86f61
+Added memory error checks for message functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@321 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 904a5b2f7c94db6071022c5b26e9b1b4f187d367
+Fix memory error checking in key functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@320 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ddd10236bd69e966c180b5260f799382180e8dd9
+Add memory error checking to keyfile functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@319 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b4c65e41f6020bd74521896a8f9f5673994d55ab
+Fix build warning.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@318 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 79e9eb53d44d777f2aa094e643cc3ae796e7d4f4
+Add memory error checking to key exchange functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@317 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 10afd9818cdf1fda8b19bae69dd2c8973dbbf606
+Check for memory allocation errors.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@316 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 186667724a70dc146ac92e03ab4eb3eb2cee222d
+Fix build warnings.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@315 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f80efcc26070bb6d42fca830d80aed3fca82206e
+Add checks for memory errors in channel functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@314 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2634f45e11020950f1c33b3793532850746d0023
+Check for errors of memory allocation.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@313 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 98f78e11025bc7e0de3ea5ddb4b58404cba472c2
+Add error checking to buffer functions.
+
+We don't check arguments cause we want a segfault here.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@312 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8758b1260bc48fd908cc4fda227bea86bc8ddfc8
+Fix segfaults in string.c.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@311 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 04d916f3aa2ace814bb505822f762d3feef45f46
+Add arg and error checking for the string functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@310 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 15d0dc7a4e28c400748cd2e8b5cf93c832e3298f
+Fix sources list of libssh.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@309 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ae4ef84702cbecd4ca004349bcb4ff6cae6153fe
+Create a ssh_get_hexa function.
+
+This function converts a buffer into a colon separated hex string.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@308 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1fd7a875beca36597e987729bd76928a9593cfd1
+Fixed memory leak and file descriptor leak in known host parsing
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@307 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 07d748ef5e05b2b03cebde7bd29485946e581c98
+Remove automake files.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@306 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3441e77ddc03a95482575ad9e9c9c5b341408760
+Normalize the license in all files and add vim tab instructions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@305 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 84430b22771ae368267ce20e7c2ef612ada42c7c
+Improve the lowercase function and free memory allocated by lowercase().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@304 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4ab28a049f96e2186a91bf62fbf98b8f8faa0f72
+openssh Hashed host support !
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@303 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3090d104cf050028dbe2b29788ace057d8eca321
+Working new known_host algorithm
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@302 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 75d5bb457f604da62a5b821ea0abfa61d38ee156
+Fix typos.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@301 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 39a5b53eb588e5655565f219242c3b5887074fb4
+Update INSTALL file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@296 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fc8ad69f5ce850f825521ccc1cd38653feca2ed0
+Remove autotools and win32 specific files.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@295 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 78b6e25ededc7df14304b002fd8697232ca97e46
+Fix compilation of the server with option turned off.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@294 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: e02a6e0225adb88b3eef91c479b9a50065fcdd5e
+Add WITH_SERVER option.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@293 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fce4840c779045b50dc8cc45fdfee4e6ee859248
+Fix SSH1 support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@292 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 117fc43b69d13fa332fea537d6cde517b12e6b2a
+Add myself to the authors file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@291 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 01c08774951f729e4135f34755a45aa85679151b
+Fix the name of the SSH1 support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@290 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 33b948cab991cb9ef4834ea02b19cf38623bcc3f
+Add an option WITH_LIBZ to compile with zlib support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@289 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d3d7f08d6a7c9738856b6b3d55c8f255fe881463
+Fix zlib detection.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@288 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3b38c66b3d70d1435be4b5bd7052ec8c2800a6b3
+Fix possible precedence problems.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@287 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 390d9e53dca2b2228871b5a3ce3ec88176424fdb
+Fix win32 builds.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@286 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fae68cac8a5ffd5a52257f2b62110d91a95d62ab
+Add an option to build a static library.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@285 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cf89b6eb48ea1d644b68cef53c2d7be46aaaa62f
+Change the name of the doxygen group to match the others.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@284 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9249006e64470337422f4fd9e176ea2cb7d603e1
+Add a ssh_version function.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@283 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: e4d16db116cdd2f2075efca8a52036ae58c7d4f9
+Use my debian.org address in Uploaders and takeover the package
+with Jean-Philippe permission
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@281 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 98711e9d0f1e79f827fc5cb8f1c275ec0900af9a
+debian/libssh-2-doc.doc-base: Fix doc-base-uses-applications-section
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@280 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6bda3c7466a682a76defe1b5a2cb97ff0afa7977
+Use my debian.org address in Uploaders
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@279 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 139f59ec62b4a5fcd462be9cdb51ea9cea2358aa
+Add ${misc:Depends} to please lintian
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@278 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2ab68941324d432b523a4e3a66801a260c8fdd35
+Use debug section for -dbg package
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@277 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 63cff85b1a27bddf4eeda84e02fd6d2686e94404
+Fix compile warnings.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@276 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0151b6e17041c56813c882a3de6330c82acc8d93
+Fix build with cmake >= 2.6.3. -D does not overwrite FORCE.
+
+Patch by Jim McDonough <jmcd@samba.org>
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@275 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ee54acb417c5589a8dc9dab0676f34b3d40a182b
+Don't require C++ compiler.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@274 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 08e24088962025483b7cfdabb1c574624e730e7f
+Fix build warnings.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@273 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 453b91903bb4d6ab08487055254ae33a2dddaf81
+Enable printf attribute checking on GNU systems.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@272 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5681c542f68232573b7fe6efa92a66457b3c6b4d
+R.I.P. ssh_say()
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@271 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fe5f283c4865c34b44795c31cb7917aa00857cef
+Get rid of ssh_say in the sample ssh client.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@270 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 05495a263aba3e94c4c36a99fc2f5a872f32a5ce
+Use ssh_log instead of ssh_say in ssh_list_kex().
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@269 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 40bce93e97dc3afb14662d9b01ba07154093c4e7
+Get rid of a ssh_say.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@268 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4d889e0af094ed18334699f7ca6047726175dc0d
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@267 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 49c88c2cd71beb881041cdfc5bf58a4365acadaf
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@266 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1d3eeda7f9b02e4dec12af0a2bc60f3a614c2255
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@265 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fe98c015e9196c9a863dcfe8a9b33f72ec0f0c02
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@264 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d347b7e00fef36ffe79b92e1ed287d5b17d63b52
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@263 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f99fefc587b610996d9f6cc70feaad77a67b44f9
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@262 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: eced7fb95888143d3307b4d87ab9c1390437907a
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@261 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1486d844e7054b446a5f1882f123e05e291d5dd1
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@260 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 78273fe5c5264dc2ebc4aa3c81876e287ecc4b15
+Fix build.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@259 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3247a7683a21cbe100057a796808ad250e9d1ae0
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@258 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 39a8009e787958d00f1be5e256dcb0350dbb548e
+Remove ssh_say.
+
+Aris, how should we print an error?
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@257 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 081adeb3d6dc5a4c7e1a592f2ae36b72cfb6c6f3
+Replace ssh_say with ssh_log.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@256 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1edc164265b1b69496d01a2382ad4aa91cac8df8
+Fix compiler warning about unused variable.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@255 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: acb4e379574012a22a3fa30b59fc0cb6f34f2d13
+Fix compiler warnings in keyfile.c.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@254 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 02f2511985398f1b6d8b91b58dba2a17e6fe9ad7
+Fix NSIS installer creation.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@253 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a800db80e4c05c2637c5e5788c1d50aeeae15acf
+Add NSIS generator for CPack.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@252 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ec0c1ef63b77d0354f2efd4954fd4d26886645cf
+Add NSIS support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@251 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b4cebfb03d1b234e0287397d0ef96d335f5999ac
+Fix compilation and installation of libssh.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@250 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 461d9413d3c32066953f4ed97b8d4d8fc6f169b0
+Fix build warnings.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@249 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cf1e7fa836b5cb33b3b8e0e01f1e1cb6f2c3c462
+Fix cross compilation errors.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@248 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 14580705d56e70b10cfd603c8878da29f2f2d770
+Set needed functions on Windows to true for now.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@247 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6ab119d8dc94703df8595b350041bf8843403acb
+Fix cross compilation.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@246 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f0b2c39d2fecfa989cd6c455f2736fb914db80ec
+Fix crypto/gcrypt detection and prepare for cross compilation.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@245 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 814cde90699691d73605dc2604f431dd454852c2
+Find zlib of cross mingw.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@244 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 851560426f9b1e8a019124f00450cd757460e61c
+Fix build warnings.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@243 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: facc434ce463c9864ec78c19a9e8d6a2eef8b96f
+Add missing include file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@242 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4b8eb385867177a0005ae4baf15e40c9527699e5
+Fix build errors.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@241 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d3e64a744e9b847f8b316bd5ff1805bb79f9a5ac
+Fix build on Windows.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@240 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fad349fecdf664f8c7113decabf0482cc0f83c3c
+Fix version number.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@239 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: e1a1796783b30f2453a423c13493539058045c2a
+Fix build on Windows.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@238 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b9e6ce934d3a7ab16a55a283296701985f426d5d
+Rename function to set sftp error to be consistent.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@237 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5ea8088938a917d4956b377e8fa94b2b469cc018
+Rename function to agent_is_running.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@236 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7ceaf5c43af77666093638e7a5e67faf86aba9cc
+Fix the ifdefs.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@235 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f4bbc45bbe7cc5caa494d89c03681cdacb3c63a6
+Add missing ifdef for ssh-agent support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@234 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ff19095415f94e99dde514ac5be64fda51caced1
+Fix build warnings in server sample.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@233 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b8c78bdb5a7bbdbe9138e46092eaa693f520e864
+Fix build warnings in client sample.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@232 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 73cde232be40f850467cc8bcc3e85429a82e0e08
+Complete ssh client agent support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@231 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 53226f98f245da9b0260709bc4866f67b479b825
+exit-status should be -1 when undefined
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@230 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 22b422995f4e2b569565992a5feef7de08597e54
+adding error status in samplessh
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@229 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ac3d66ac69278906bb09c4c751c6b9827d7ca17a
+channel_get_exit_status()
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@228 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 903e22cd1154270f10d765a754cb077df7b87e46
+added logging for exit-status
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@227 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0679dd4fd8f9e9b0443f3331739aa9ca79e14bfc
+Fix typo.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@226 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cfbc063dd3f34ddc4754f3425f9ac4c243a70979
+Add a 'make doc' target to create doxygen documentation.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@224 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 81de36e923be647d6f9b1bc90688e5554070b2dc
+Moved ssh_crypto_init to priv.h file and added a note.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@223 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a80ad5cbd34c0cc1ee8c2801e2d5e9d090f2b65f
+Remove deprecated pubkey_get_hash function.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@222 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 69a1fac7a1361e998ff373208f89808de9c522b3
+Fix build warnings in the crypto wrapper functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@221 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1fd6a2e9e0b57bf861f177e737fd9cbb6458975b
+Fix build warnings in socket code.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@220 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9414b53befc24d462f5e5d00eea112a7b01806a7
+Return count if the write was successful.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@219 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5f58fc773ca9a0eb840654acd7896bb294ad4635
+Fix build warnings in sftp code.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@218 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3991b3a3aaceca4b6090688af133c1ed1161ce1e
+Fix the build.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@217 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 58404116bcb38c1e40b837501c08bea78c734dd2
+Fix build warnings in session code.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@216 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8c60d864c74537c1d60be593f3ed02d35b88b4e5
+Fix build warings in the server code.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@215 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 974a160fd31c10852e9bb811d14a33cff1bae7c4
+Fix several build warnings.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@214 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5e03a95a937c8c64e4bfab8f796d88a4168857bd
+Fix compiler warnings.
+
+Aris please check if ssh_crypto_init, ssh_crypto_finalize and
+pubkey_get_hash could be removed.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@213 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5db7ec356bc424d1dd55ca19cdf9d53e7ea54412
+Make ssh_connect_ai_timeout static.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@212 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5d798f62257b29dbcb7a4bdc37e7585b4c4894a3
+Use unsigned values for length in buffer functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@211 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7250e03f97a46aa8c1229d072b1f6f3a6e13a9a0
+Fix build warnings in channel code.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@210 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 948c3f1befb2ae25f5b8ae277f6cac1a9853b399
+The string_len function should return unsigned int.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@209 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 55c7cc683921ea7f4b640184cd13a90656d097ef
+Fix compiler warning in client.c.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@208 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ddf4a8e9c977be292a12009a6d0f4a088a996453
+Make ssh_analyze_banner static as it is only used in this file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@207 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f4d74e285e9af06c1da245198faa366d6f1e06c4
+Fix compiler warnings in buffer implementation.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@206 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fc0928a5721041e70807c33bd16fe852225d97f7
+Fix build warnings of the auth code.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@205 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ed53a70854400d64911c94995e28296bd3298525
+Make the build_make shell script executable.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@204 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 460d0b402bac86221fd94f086ef88f94f584df1f
+Add Makefiles for the CMake build system.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@203 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 234706548121cb9acf609b6cce71d53144143968
+Add missing agent files.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@202 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4259c9195c756ac22358c1c10844030372823a76
+Cleanup the define check in the libssh header file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@201 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 70aa33c041b88573b32d67d0153c6472ce41ea8b
+Start with ssh agent implementation.
+
+This is work in progress.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@200 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 944084964a424584efa1f3e46c8efb731e58023f
+Add extern C declatrion to server header file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@199 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f9f8ded7f0a691c0b46ccff596944ef1b06cf8a8
+Add a more generic auth callback function.
+
+You should be able to obtain passwords or usernames with this
+function.
+
+Signed-off-by: Andreas Schneider <mail@cynapses.org>
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@198 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6ea38880543478fb7d23de731f56fbe33632f5f7
+Change version numbers to 0.3.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@197 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b11ddd23b28b987d5f7ae1a9a3aa9629bb9f2914
+Add doxygen documentation for all public sftp functions.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@196 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c3e026c3034d5d51f011a75b191f46c3891069cf
+Create POSIX like sftp functions.
+
+This breaks the API and will be libssh 0.3.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@195 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a104c2eda38d2fbf81285e0223ed755783792169
+http://www.cynapses.org/tmp/patches/libssh/0001-Replace-getenv-USER-with-getpwuid-functions.patch
+from andreas (mostly userdirectory cleaning)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@193 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 16a3379a610ec41a5bed1755fc9eeabf9c8b37b4
+some changes to resolve bugs reported by webyog
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@192 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f7700f2bc2f2d5876c91bbbf3eaae233ee1548b1
+patches 0001-Save-the-last-error-and-provide-a-function-to-get-it.patch,
+0002-Use-const-whereever-it-makes-sense.patch,
+0003-Implement-function-to-retrieve-userauth-possabilitie.patch
+from Andreas Schneider
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@191 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f880011d727e598561fe64a805a2fb22a39ffcee
+commited path 003 and 004 from Andreas Schneider
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@190 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 14c66c9bc504d837dc6a134bfd0628e5c98d210b
+oops miscompilation
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@189 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 11e3d3ebab09112cd163268178bafeb5d6b48f87
+More doxygen documentation (internal set)
+split of the sftp_async_read function
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@188 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 64e73b8d8ab216c5dd8812c8cdad39b7f1bfc4d2
+doxygen fixes. Mostly typos and some comments.
+sftp must be fully documented !
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@187 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 90bb81f7b0a729f0508c02586b3d609950d24f2c
+added a file from openssh needed for known host parsing
+added the BSD license in the tree to fulfill the license.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@186 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0e8cf3b0828c88aa7467192b39e7ab9276d054b3
+small changes in doxyfile.
+cosmetic changes in buffer.c
+added debugging enter_functions() in sftp.c
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@185 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3b25cbf13406cb2f775a8298d2224b187de16275
+fixed a bug where channel_poll could wait forever for a packet already in socket buffer.
+Inc'ed libtool numbers
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@184 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4a3554b2fa794edec0a628610e7bfb3749d76129
+poll(2) support for channel_poll. Not yet for channel_select.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@183 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d9832d1190ee23bf7a7522a8f3d147b505adf2c5
+correct O_RDONLY sftp bug with windows systems
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@181 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d477025000c4d6717f9501cc8d382eed06fbe868
+fix bug 0000015 about memory leak in server path
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@180 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5758188467194aa04ad854b77167ec360bdac463
+fix channel performance by changing the window len.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@179 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b8dac18d0e457e40f8a33bc72bd9242fe740fffe
+fixed a problem when a channel blocking read was bigger than size of buffer 
++ window
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@178 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0d1e22f5f883e1c95a87698cc9a0b48371665623
+Resolved the unitialized data_except member variable in socket.c, thanks 
+Norbert
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@177 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3fb274ca8402198d8540388503c1c4256378c80a
+added log.c
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@176 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 372d1e727b03eadd1f7c707cc08ed5203bac9921
+fixed a bug in the channel windows.
+Fixed the window growing on packet receive
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@175 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ff515b55282a62cb7c39d7c72d48fa8e1d2b11e4
+gcrypt + SSH1 bug resolved
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@174 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 507ea1e90f7561c0c3c835d004bacb1b66ee3eeb
+oops missed a line in the fix
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@173 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: af637c9e8eac503f105fce70dd7af7431af80195
+bug #00006 fix
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@172 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8ce42c279ec470bc600fcf9dd3450b450f6c32f0
+displaced the data_to_* into socket
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@171 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1fce8c72e79a69b0478b2f3bf84d058ebaf5211c
+more efficient allocation algorithm for buffer.c
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@170 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 77603dbc5a5c55ecfa8d583c133db844673fb690
+Big changes :
+refactoring of the socket class. Now the buffering happens in the socket class.
+enhanced the logging system. Cleaned up some debugging messages.
+Verified the working with ssh-1.
+If this cleanup introduced bugs (it did but corrected the found ones) at least, they will be easier to find
+
+also added the (c) and fixed dates for updated files
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@169 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5367581ce1d52518343bb8ede60738f4035e033a
+legal paperwork to be 100% respectful of LGPL, about openssl's
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@168 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: da3d665a13e7989a9cf78d07738a92981f6e3486
+begin fixing the ssh_say everywhere
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@167 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fe51f9c7662b7391f80953bedc4fe61b89013913
+big changes :
+Some documentation, and a new logging system.
+some work must be done to get rid of the infamous ssh_say()
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@166 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b94422ef10bb083dde58e8c8349cc3e004888f9f
+fix doxygen
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@165 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9aa8df7cd3f95a3414ea7e7226a4900ad101845e
+sftp asynchronous read
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@164 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ea407765db87125f23893015fd236dfedc9413e6
+dev-cpp project file
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@163 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 41475a2a1f2246010d24183cef871051609ff8e9
+workaround for the bug #14
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@162 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c2f151ab56fb56246ac6ff946190d494e436d7a2
+libssh.h now can be included from visual studio
+revert the wsapi wont-fix
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@161 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7278a9df95d905234e5e86425afff457cb41b8cd
+fix #ifdef win32 bug
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@160 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 58f28617b8c6ca02889f8d116c9a7cd31f7a22a1
+some changes so it compiles better under windows
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@159 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8b9841dd5714879b27ecb4532dfbbfe08e3b718d
+doxygen documentation for public key authentication
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@158 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2cf6369113a23bbd7fa0e6b872d4a7c1ab68272b
+Doxygen changes
+Modified the makefile so the ln -s never fails.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@157 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6a80f1a049ae7a64fac5a0838c268eac3e6d0b8b
+Resolved the string_free issue by coding it. I also made some 
+documentations of the string module.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@156 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f084f6e67cf62611fc0f99e367fa6eda1329d760
+fixed a bug in channel_poll where channel_poll() would return 0 even 
+when data was available.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@155 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0a7d405b3d04a5843c92a200dd2ddf049ba8c2a5
+* BumpStandards-Version to 3.7.3 (no further changes)
+* debian/libssh-2-doc.doc-base: fix doc-base-unknown-section
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@154 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 46b96a145cde14b7ecf4a9608173508aa877b9fa
+preliminary test suite
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@153 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ebbca06b045cec6367deb4eb7a947cde2090dedc
+last win32 changes from keisial
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@152 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: feb4a932472bc5bcb2e13d7e60bc89ab70aabd7a
+fixed wrong prototypes for socket_t
+bug #0000004 
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@149 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 68a1a4cc2138039a85a8a8353c92d398eed57ff0
+fixed the netdb problem ?
+i don't understand, removing the #include <netdb.h> didn't add misses 
+for ntohl.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@148 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: df54380a33b0704bc4af015b788c2885fb6b632e
+config.h bug resolved
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@146 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 77a88811f1963bc5301c20f43c7bd8037f8849c7
+change doxygen doc for channel_poll
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@145 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 99cfb696107efe1be5f1db3732810b1e795d21d1
+changed version number to 0.2.1-svn
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@144 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c284eb4e38721f567db15bde24ea53822d0cefb4
+second part of win32 changes
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@143 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0d6e3c17903bf370765b24b5f2cfeaf9d5d57e3f
+shrinked the default_get_password function. I hope nobody used it, it 
+has nothing to do in a ssh library.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@142 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 29997022c812a5ac47c1c96cbea4d8cee339b532
+first part of win32 patches
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@141 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5029fe9d74d0fbc93cc2756d8b48d1bb462e3f39
+Merged Keisial bugfix (crash when available protocols mismatch)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@140 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8e04bf0ef1c84e3c05551f640f8b8ac9b0dc9d50
+fixed a load of ssh_set_error(NULL,...)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@139 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 77743b75f41bd353c09da6a740562d621ed9382d
+fixed null pointer into options and ssh_set_error()
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@138 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 077dd81fcc9453613de18c6d037ef61f3a8e161c
+added the socket class and created wrappers
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@137 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9b5f8935132433d64757ac60ce0ee4e8c59a8af8
+fixed the #0000003 bug
+was only a misplaced #include.
+
+I hate C
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@136 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 21c547689aaffcea3045df0359315115e2e4c0b0
+Rodolphe Rocca fixes
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@135 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 01470097c6ff22b3c1a8c4383ae08a2ad3ce0ff8
+fix bug #0000002 : in_socket_buffer and out_socket_buffer memleak +
+"g" and "p" O(1) memleak.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@134 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d7d53d3d0f885577bfda15042f691eff268080c2
+* Use now official Vcs-* field
+* Use new Homepage field instead of old pseudo-field
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@132 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 860f85958096f85f05baab2c6c663e678ffe71d0
+* libssh/Makefile.am: use top_srcdir instead of srcdir
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@131 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 55f3b2d7a82a8cc616fe7fa8f5b880aaa1ca4ab6
+* include/libssh/Makefile.am: using top_builddir instead of top_srcdir
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@130 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 70a95fbe0e869d9162ec6e7b5bcf8f0fb1ffa6ed
+move config.h installation to include/libssh/Makefile
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@129 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 93af231d145db8f03938d49f62a07c3bf0134738
+Better automake files
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@128 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 63dcee9fa8ba945bcdc8db67a582ebf0a07baa26
+Sync with debian package (0.2+svn20070321-4)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@126 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ca32b0aa146b31d7772f27d16098845e615432aa
+* Add autogen.sh to generate autotools files
+* Rewrite the makefiles to use more automake
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@125 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 21e639cc3fd54eb3d59568744c9627beb26e07ed
+Remove other auto-generated files
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@124 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7c9224dcb8d52c7168feff2d1b56eac450fe75c6
+* debian/changelog: update the debian changelog
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@122 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 27ee8ad5b334ee91c1db2abb1d358a0ef86817fc
+* debian/control: add the XS-Vcs-Browser field
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@121 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d15c729e1b4fe05bbd13ad54a5a0ea5df51ea5b9
+* Sync with uploaded debian version
+* Add XS-Vcs-Svn field to debian/control
+* Be binNMU safe
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@120 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c86bc487e54c1fce6bc92ddb99b9734b6da71703
+* Sync with uploaded debian package
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@119 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0c3ead73925af354728c55bb956edc72d45de8de
+found the nasty server bug ("ssh_accept: ")
+it was the session->alive which was null. I wonder how this bug survived 
+my initial development ...
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@115 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7b6c7fac53592780c9fd62fab1db65988dcddc80
+Split devel package in -dev and -doc to reduce installed size
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@112 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6a655edebd79feebe1430c1a9ce9393557b8cc24
+include/libssh/server.h: Remove struct definitions
+include/libssh/priv.h: Add struct definitions that previously were in include/libssh/server.h
+libssh/server.c: Include libssh/priv.h
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@109 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 28eaaa537b6e0fc08d7a517e9dca8063dc9e20a3
+libssh/server.c: Include netinet/in.h in order to compile under OpenBSD.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@108 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: fdce3776eb7c1331eb27608965dde0868fd9c53c
+* debian/changelog: New release (0.2) :)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@105 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 94d6f393861f441b43e1a68b3804d3e0dd012a2b
+trunk to 0.2
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@104 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0465d85ab439e5fc84931b84761d8f7f8d43cfce
+debian/libssh-2.lintian-overrides: New file. Overrides lintian warning about package 
+  name not matching soname.
+debian/control: Change debhelper build-dep version from 5.0.0 to 5
+		Add Priority: extra to libssh-2-dbg
+debian/changelog: Change package version to 0.2~rc-1
+debian/rules: Install lintian overrides
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@103 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9102155d3db8109e11f1d8b5c64b824bdbae4bac
+Use libssh-SONAME instead of libsshSONAME for debian package name to avoid name clash 
+with libssh2 package.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@102 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1ba22125e2919c99ab378daac2df95c0b9bdd0c5
+debian/rules en executable
+
+packages edgy/amd64
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@100 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ef5113cc5761d7364b77bc5572031c5ac91fcd54
+-rc release
+Ipv6 patch from Laurent Bigonville. When the ipv6 targets are 
+unreachable, it tries all possible targets from the getaddrinfo list.
+
+Norbert: does it break anything ? it works for me but I didn't test it 
+extensively
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@99 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1c1e5de2c65e65718a0f7aa69f882285c2881638
+forgot a line from norbert's patch
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@98 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4479b4aded35f52a49f20053ed81161037818cb6
+norbert's patches + strange typo in packet_nonblocking_flush()
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@97 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 77db3bba379688814c3a3f3a182cd87d91941861
+Change to debian debug package to contain SONAME.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@96 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f159b5d817a6643a179fa12745c8f95f8873c5f7
+moved ssh drafts elsewhere (for packaging reasons)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@95 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b3fecb1a250cfaf5db5bc820ab7053364183821f
+debian/rules, debian/libssh-dev.docs: Use doc and install-doc Makefile target.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@92 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9682f5acf41dd5d6cc811fbf124a5fb2b1b04db7
+debian/rules: Use the real configure switch (this comment doesn't make
+much sense, does it?)
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@91 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4f498a1ce73df405fef567dddf4bd31afd896def
+debian/watch: Remove useless comments.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@90 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 2cb594277f97146a4c57158b403e13eb0e1f34f3
+Add Homepage pseudo-field.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@89 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cd6af562276379606b79d408e99a3038df65dde5
+Upgrade config.guess and config.sub from autotools-20060920.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@86 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 65659ac1ba29eafb8cda7c4c63360329b52f0fb2
+Debian packaging ! and adding of the packager into authors
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@85 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ce4f72352c0784452392bbc444fb3511aeb38c57
+fixed doxygen ouput and input path
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@84 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3d346fdebc59fe69a34d25b8de5c2b574b614340
+fixed makefiles for debian packaging
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@83 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ff273b26b366c1aa2502b3a9828b256cc8d04a06
+oops, forgot to verify that it compiled fine
+also, published changes from Norbert including lots of session->fd checks
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@81 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4442e0e26206a1242a0a9268de5e2731c439e34e
+good work tonight. Made documentation for authentication, channels, buffers, errors
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@80 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d101fb4329f4313f1b930e9876166df3304e672a
+more doxygen documentation
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@79 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 24aeed5d1f40291c0c33a34403b212434e8f4e85
+doxygen documentation for option module
+added ssh_finalize() into libssh.h
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@78 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 44b54704433753599ff246e4461556afef645a5d
+at least I get a working doxygen documentation.
+I am going to make the whole documentation as doxygen files.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@77 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ea215fdecc62cc3ca25f707dade07941d66f7856
+Added doxygen documentation file. Now need to document it..
+added const keyword into ssh_connect_host
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@76 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b2d0d13a2d6709c740453ee3ff32bc37160cc331
+Add ssh_finalize to handle finalization of libssh and underlying cryptographic
+library.
+Add corresponding paragraph in API draft.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@75 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9bb0be2dbb995097859f304111e61c6bbc910746
+Correct file header
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@74 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f10e8874b28f78c5b2cc4bd0e9af2167634d5922
+libssh/keyfiles.c: Fix bug when reading private keys with libgcrypt
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@73 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 770e73d8b7d0ca1e3fd8faab08cb88307d1b1c99
+keyfiles.c and wrapper.c: Remove useless secure memory flag (for libgcrypt)
+dh.c: Initialize libgcrypt only if not done before
+client.c: Remove cleanup of cryptograhpic library. This needs to be put
+somewhere, like in a crypto_finish function or something.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@70 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 10b1a631e8794932a57c84b41a6bf3870416a4cd
+Remove the file "plop", which was added some time ago by mistake (oops,
+sorry...)
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@69 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c5287c543e28048f5cac844a5f03debb2df60271
+removed mercurius from trunk
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@66 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 4fd1df0586ed08911467141e605afa0c0c610e6a
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@53 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3edfd105b37c71f10816f32022e6baf54625d9c0
+nonblocking support in dh_handshake() from client.c
+some packet nonblocking fixes.
+reenable sftp from the sample client.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@52 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ac4fd091775805b6849774f3c4b7e59dc1ab6bde
+Added support for known_hosts format version 1
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@51 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d923851664f20f7143981dde3562ae9d6ce0b72e
+same changes, SSH1 (reading only).
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@50 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1847fb2373f6cc5e95d36efa4e0b260fb1337c3c
+added bases for nonblocking packet sending and receiving. packet_send 
+and packet_read may return SSH_AGAIN if the session is nonblocking and 
+there is not enough data to be read.
+I also added a socket buffering through session->in_socket_buffer. It is 
+more low-level than the packet buffer.
+I should rename in_buffer with in_packet_buffer.
+There is still work to do with the socket status, (opened, error, 
+closed, ...) and much more work to extend the nonblocking to session 
+opening, messages sending and such.
+I find the switch(session->packet_state) solution very nice (especially 
+when the nonblocking function may have 10 differents states, like in a 
+connection.)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@49 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: cddc5d6889f252b2cde5403f16063b640864f55d
+norbert's Makefile.in and crypt.c patches
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@48 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7b416e5c520c4dea21e242733d64672f304fdbd3
+resolved the channel hangs on exit issue (moved EOF to read events and removed it from exceptions).
+resolved stupid cute & paste error in init_md5()
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@47 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c53b6b907ce7ccaf720777c18eed3eea46807bb7
+resolved the infinite loop on exit (thanks giga for the hint).
+I resolved a memory alloc problem into hmac_init (same kind that the one of md5_init).
+It's still saying there is a memory corruption. Since the memory corruption happens before it is found (in malloc()), I'll have to run valgrind to locate it.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@46 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: bef09f8848f60a2adfac7ef4a522c83fe184a854
+Phillip Vandry has seen another bug into r42 :
+-    MD5CTX c=malloc(sizeof(MD5CTX));
++    MD5CTX c=malloc(sizeof(*c));
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@45 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b719cc0d13bc85c12fbf484a2e94bf745b7409c3
+Libgcrypt was still used by default. Now it really compiles with openssl by default.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@44 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b753dae37ee09f9fd0576d5fb920b8f9a4cf4e48
+Almost forgot the most important :) a patch for AUTHORS file
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@42 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0f67ff89d9918344965897887ca47c9bb7471752
+patches from Norbert merged in. I have made some little changes here and there.
+It still doesn't compile because of the O1 thing passed to ld.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@41 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9a2683f183338da7c82261d502cdeff0855c210c
+added Jean-Philippe's patch for libtools. it doesn't compile on my computer.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@40 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d86f0017545f0076a1136b5c6f8b0a7a58366342
+channel_select(). this function rocks !
+I adapted the sample.c file. the select_loop function is bloated and fails to demonstrate how libssh is simple to handle...
+
+it looks to run at first try.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@39 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5f7c84f900b81e3bbff55378f8170ddf150daf9c
+added the gcrypt patch (without gcrypt as default library).
+still needs tests.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@38 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c0525750fd090bca0f1ab1884cc26ecd227addb7
+ssh-1 small modulus server keys patch
+acl bases in mercurius
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@37 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0c1ca983edd3859acd8c1a02b8db69fd62ca89b6
+2 macosx patches
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@36 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 1b20b8df85e07353f8403a6b55f8206980228639
+fixed bug in sample that made the client running in infinite loop.
+hunted a bug in channel_poll that returned 0 when EOF.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@35 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c7a059f0d316b757714fb3e278044ed30bcdcda3
+pam include path patch.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@34 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c83b993af9779967994c1fe1d26536026cdee3af
+PATH_MAX patch
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@33 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 9a4a7da811d13d57ea2b01436092d14ae3423d9c
+cfmakeraw patch for configure.in
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@32 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8963144850a17aa961b53ad3b036eb71b628d111
+server goes into backgroup
+server accepts command line arguments
+server write
+comments into the configuration file.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@31 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: a8b5d63e14af539ea417f4752850ff300055a0ad
+write support
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@30 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ed62d1fb533626ac2b245086197856e709e79ffb
+Readme of course
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@29 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f0008adac6f9f5b6b2a06541bda7502139759ede
+changed config file name, take rsa,dsa and port into account
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@28 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c767514dae4bc9f8a52d74f378650f55f4f1a34f
+some compilation fix
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@27 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f31e7a3bec432be88aa4bb82c7f53baa32c6ac28
+removed obsolete debugging info, split main.c in 3, and now mercurius links with a statical libssh
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@26 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: bcb6bf25fa132421672d0782b9bfdb82fd2c6600
+the server now does the chroot and change uid.
+There is also an option "nopassword" for ftp users.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@25 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: ddd650b3bd10fa3f2198bc7c63bc75eb3ad0cdc5
+now the libconfig will be staticaly linked and will be autoconfigurated during make.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@24 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: b81c66ee8f785d56eea7ebf3c8d741704c4f2b1b
+pam samples files to put into /etc/pam.d
+ssh_silent_disconnect() and server forking. I still have to add a -D command line to avoid the forking.
+password auth works, but there is no uid change yet. I'll have to make the configuration stuff really being respected by the server. (like keys, ports, users, ...)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@23 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 0de0dca16d1caf6c712fb4b50d4ff7c7e25d5129
+more ACL on directories. Not already enabled.
+First Pam code. looks like it works more or less.
+it needs a file in /etc/pam.d to be activated
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@22 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 8510d2abe49baf0c081ac52323d6a29ea94bab84
+youhou it works :)
+to compile libconfig, configure it, then the makefile will work.
+to run, either make install make config or add its path to LD_LIBRARY_PATH.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@21 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: dc0c5c4cfeefae2abc41d2475ed69e8fa26af1ee
+the whole libconfig + my development tree for ACL/ config
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@20 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c76e6e496d6065b8cb61c5ea25df6a38619cfdf4
+file opening/reading works :).
+I fixed the "longname" part of a stat (which makes the output for ls into openssh's sftp)
+it's possible to browse and open abritrary files. but no ACL yet
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@19 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 7812915daa1bdb3198059f97e0fb889f0b39b7d2
+I've forgot about sftp_server/ :)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@17 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: e2bdc2f66c85d4d1a38b2511cb98da105cafcc24
+sftp server implementation :)
+at this time, basic support of opendir, readdir, lstat, etc.
+just enough to "sftp" in and type ls.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@16 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 35221f967ef5e9801c2496a7f10ced1408f9cd20
+fixed server segfaults on exit (double frees)
+sftp_server_init()
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@15 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 6c0503f6c68ba92638516257c9991bcfd660e41e
+some debugging things in ssh1 key exchange
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@14 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: bddce3a5da9f24c18a9ca69e08da50ca4de4671d
+yet other patches from Norbert
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@13 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f23685f92b91aa53546a81bf7793c38a45df15d3
+stdint.patch, debug_output.patch, ssh_12_select.patch,
+solaris_7.patch and args_in_decl.patch from Norbert.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@12 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d95242d2cde747151953387053a9649bd525d265
+oops, forgot to patch the Makefile.in for the ssh1 files. configure.in patch from Norbert kiesel to have a compile time ssh1 support.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@11 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: bb50d8f46429cecb43826c824b2d8139dcdb793e
+ssh-1 experimental support
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@10 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 56602ca031726a7682de3164b8f7f3da4881f7bb
+More work on the server side and sftp.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@9 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: f730d3b361f717135786bddb3c949bfae213bbff
+some adds, now it's possible to test it correctly.
+channels still need some hack so they know the message system exists.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@8 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 96a99bab7853998ec8c23da6bcb9ffb10855705d
+The kex works, the client authentifies (with password) then it's possible to choose a subsystem. The channels don't completely work.
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@7 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 5c26ae735483d140f802d58b1872b2fe9468d219
+server kex done :)
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@6 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 3113d8756628f463fda33b93801aee3c6ee9aa32
+ssh_accept() implementation begining in server.c
+it just accepts a socket and send a banner right now.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@5 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 636432e47593f145675e40e21bb8c8b6eb6ce8be
+sample sshd server accepts a client and sends a banner.
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@4 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: 55846a4c7b09af2d105c7f7dfd0a43aab2f6e5a5
+Beginning of the SSH_BIND implementation
+hack for errors handling so it supports an Object-oriented kind of errors (generic for ssh_bind and ssh_session data types)
+
+
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@3 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: d40f16d48ec1ed9670c20ffaad1005c59a689484
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@2 7dcaeef0-15fb-0310-b436-a5af3365683c
+
+Commit ID: c65f56aefa50a2e2a78a0e45564526ecc921d74f
+first import
+
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@1 7dcaeef0-15fb-0310-b436-a5af3365683c
+
