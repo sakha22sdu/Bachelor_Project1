@@ -2344,10 +2344,8 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Bittner2022_edits</bcf:citekey>
+    <bcf:citekey order="1">Wohlin2024_experimentationInSE</bcf:citekey>
     <bcf:citekey order="2">Wohlin2024_experimentationInSE</bcf:citekey>
-    <bcf:citekey order="3">Bittner2022_edits</bcf:citekey>
-    <bcf:citekey order="4">Wohlin2024_experimentationInSE</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

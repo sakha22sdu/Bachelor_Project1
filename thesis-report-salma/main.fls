@@ -1,9 +1,9 @@
-PWD /home/salma/Bachelor/thesis-report-salma
+PWD /home/salma/Bachelor/Bachelor_Project1/thesis-report-salma
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/salma/Bachelor/thesis-report-salma/main.tex
+INPUT /home/salma/Bachelor/Bachelor_Project1/thesis-report-salma/main.tex
 OUTPUT main.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/book.cls
@@ -984,6 +984,10 @@ INPUT chapters/2_background.tex
 INPUT ./chapters/2_background.tex
 INPUT chapters/2_background.tex
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
+INPUT ./figures/bittner_edits_classification.png
+INPUT figures/bittner_edits_classification.png
+INPUT ./figures/bittner_edits_classification.png
+INPUT ./figures/bittner_edits_classification.png
 INPUT ./chapters/3_implementation.tex
 INPUT chapters/3_implementation.tex
 INPUT ./chapters/3_implementation.tex

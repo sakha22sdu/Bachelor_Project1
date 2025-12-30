@@ -1,13 +1,36 @@
 \chapter{Implementation}
 \label{chp:implementation}
-
-
+This chapter describes the implementation of the analysis conducted in this bachelor thesis. It introduces the technical prerequisites of the implementation, outlines the supported language structures and tools, and presents the architecture of the analysis built on top of \textbf{DiffDetective}. The chapter further explains the specific design choices made for the custom analysis and discusses how the correctness of the implementation is ensured.
 
 \section{Preliminaries}
 % what language structures do you support?
 % what tools/libraries help you to achieve your implementation?
+This section describes the technical scope of the implementation and the tools used to realise the analysis.
+
+\subsection{Supported Language Structure}
+
+The implementation focuses on analysing configurable C/C++ software systems that use conditional compilation to express variability. In particular, the analysis supports variability implemented using preprocessor directives such as \texttt{\#if}, \texttt{\#ifdef}, \texttt{\#ifndef}, \texttt{\#else}, and \texttt{\#endif}. These directives are used to guard code fragments with \textbf{presence conditions} that determine under which configurations the code is included.
+
+The analysis does not operate on fully pre-processed code. Instead, it relies on annotated source code in which conditional compilation directives are still present. This focus is essential, as the analysis targets edits to presence conditions rather than fully configured variants.
+
+Other variability mechanisms, including runtime configuration options and build-system-level variability, are outside the scope of this implementation. The analysis therefore concentrates on preprocessor-based variability, which is widely used in real-world C/C++ systems and well supported by existing variability analysis techniques.
+
+\subsection{Tools and Libraries}
+
+The implementation is realised using a combination of existing analysis frameworks and standard development tools. The analysis is implemented in \textbf{Java} and is designed to process real-world software repositories with publicly available version control histories.
+
+\textbf{Git} is used to access and traverse commit histories, enabling the analysis of software evolution at the level of individual commits. Standard Java libraries are employed for file handling, data processing, and result serialisation. These libraries support reading source files, storing analysis results in a structured format, and preparing the output for further evaluation.
+
+In addition, the implementation integrates a \textbf{variability-aware differencing framework} that provides the necessary abstractions for analysing configurable software systems. This framework enables the analysis to reason about presence conditions and their evolution across commits. The specifics of this framework and its role in the implementation are described in the following section.
 
 \subsection{DiffDetective}
+DiffDetective is a variability-aware differencing framework designed to analyse the evolution of configurable software systems. Unlike traditional line-based diff tools, DiffDetective explicitly models variability by representing conditional compilation directives and presence conditions as structured entities rather than plain text.
+
+DiffDetective parses annotated source code and represents the association between code fragments and their corresponding presence conditions. When comparing two revisions of a source file, the framework detects differences in these associations, allowing variability-related edits to be identified even when the underlying code remains unchanged.
+
+A central feature of DiffDetective is its ability to classify edits according to their semantic impact on variability. Based on the formal edit classification proposed by Bittner et al., DiffDetective distinguishes between different classes of variability-related edits, including \textbf{refactoring}, \textbf{reconfiguration}, \textbf{generalization}, and \textbf{specialization}. This classification provides a precise vocabulary for describing how presence conditions evolve across commits.
+
+In this thesis, DiffDetective serves as the foundation for identifying and classifying edits to presence conditions. The framework provides the core analysis capabilities, while the custom analysis component builds on its results to extract relevant metadata and prepare the data for further evaluation and topic-based analysis of commit messages.
 
 \section{Architecture}
 % how is the implementation structured?

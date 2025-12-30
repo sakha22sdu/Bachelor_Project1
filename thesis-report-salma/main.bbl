@@ -19,65 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{Bittner2022_edits}{inproceedings}{}
-      \name{author}{6}{}{%
-        {{hash=badde269026fec0c6e5a2d81a0fe3b68}{%
-           family={Bittner},
-           familyi={B\bibinitperiod},
-           given={Paul\bibnamedelima Maximilian},
-           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=3e7722b45834b004393e094b03b46018}{%
-           family={Tinnes},
-           familyi={T\bibinitperiod},
-           given={Christof},
-           giveni={C\bibinitperiod}}}%
-        {{hash=cb68230073da45449d90e3e2326e0582}{%
-           family={Schultheiß},
-           familyi={S\bibinitperiod},
-           given={Alexander},
-           giveni={A\bibinitperiod}}}%
-        {{hash=b9cdfd5d07435c8c6ac20af227339fde}{%
-           family={Viegener},
-           familyi={V\bibinitperiod},
-           given={Sören},
-           giveni={S\bibinitperiod}}}%
-        {{hash=d79290f008da09d20408215ad85245d3}{%
-           family={Kehrer},
-           familyi={K\bibinitperiod},
-           given={Timo},
-           giveni={T\bibinitperiod}}}%
-        {{hash=d37a977a0f05c75ccc2786607cead2dd}{%
-           family={Thüm},
-           familyi={T\bibinitperiod},
-           given={Thomas},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Singapore, Singapore}%
-      }
-      \list{publisher}{1}{%
-        {ACM}%
-      }
-      \strng{namehash}{6eab2887a73b217dbfe9b411b32900bd}
-      \strng{fullhash}{301150411e85d47ff7f32d70d88661db}
-      \strng{bibnamehash}{6eab2887a73b217dbfe9b411b32900bd}
-      \strng{authorbibnamehash}{6eab2887a73b217dbfe9b411b32900bd}
-      \strng{authornamehash}{6eab2887a73b217dbfe9b411b32900bd}
-      \strng{authorfullhash}{301150411e85d47ff7f32d70d88661db}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}
-      \field{series}{ESEC/FSE 2022}
-      \field{title}{Classifying edits to variability in source code}
-      \field{year}{2022}
-      \field{pages}{196\bibrangedash 208}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1145/3540250.3549108
-      \endverb
-    \endentry
     \entry{Wohlin2024_experimentationInSE}{book}{}
       \name{author}{6}{}{%
         {{hash=e1ce15e2eeb53e3fc8c6035fd761594b}{%

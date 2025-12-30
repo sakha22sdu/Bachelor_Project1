@@ -9,99 +9,32 @@
 % How do you evaluate your solution? -> 
 % What is the result of your evaluation?
 % How is the thesis structured in the following?
-Modern software systems are rarely developed as a single, fixed program.  
-Instead, many systems are configurable, meaning that the same code base can be
-compiled into different software variants depending on hardware, platform, or
-selected features.
-A common way to implement such configurability is through conditional code
-guarded by presence conditions, for example using preprocessor directives such
-as \texttt{\#if} and \texttt{\#ifdef}.  
-Presence conditions determine in which configurations a particular code fragment
-is included and therefore directly influences the behavior of the resulting
-software variants.
+\section{Introduction}
 
-This bachelor thesis is situated in the area of software engineering, with a
-focus on configurable software systems and variability analysis.
-It studies how changes to conditional code, such as presence conditions
-e.g. \texttt{\#ifdef}, affect software systems over time by analysing large
-software repositories.
-In standard version control systems, changes are represented as textual diffs
-that show added or removed lines of code.  
-While this representation is sufficient for many development tasks, it is often
-insufficient for configurable systems.  
-In such systems, even a small textual change can have a large semantic impact if
-it modifies a presence condition.
+Modern software systems are rarely developed as a single, fixed program. Instead, many systems are \textbf{configurable}, meaning that the same code base can be compiled into different software variants depending on hardware, platform, or selected features. A common way to implement such configurability is through conditional code guarded by \textbf{presence conditions}, for example using preprocessor directives such as \texttt{\#if} and \texttt{\#ifdef}. Presence conditions determine in which configurations a particular code fragment is included and therefore directly influence the behaviour of the resulting software variants.
 
-For example, a minor edit to a conditional expression may silently expand or
-restrict the set of configurations in which a code fragment is active.  
-These effects are not visible in standard diffs and are often undocumented in
-commit messages.  
-As a result, developers and tools may overlook unintended changes to variability,
-which can lead to configuration of specific faults that are difficult to detect.
-The problem addressed in this thesis is therefore the limited ability of
-traditional diffs to explain the impact of changes to presence conditions.  
-In particular, the thesis investigates how developer mistakes related to
-variability can be identified by analyzing commits at the level of variability
-semantics rather than raw text differences.
+This bachelor thesis is situated in the area of \textbf{software engineering}, with a focus on configurable software systems and variability analysis. It studies how changes to conditional code, such as presence conditions (e.g.\ \texttt{\#ifdef}), affect software systems over time by analysing large software repositories. In standard version control systems, changes are represented as textual diffs that show added or removed lines of code. While this representation is sufficient for many development tasks, it is often insufficient for configurable systems. In such systems, even a small textual change can have a large semantic impact if it modifies a presence condition.
 
-To address this problem, this thesis builds on the DiffDetective tool to explicitly
-identify changes in variability. 
-DiffDetective analyzes software evolution by mapping source code and annotations
-to structured representations and by classifying edits according to their effect
-on variability.  
-Instead of treating all changes as simple additions or deletions, DiffDetective
-distinguishes different kinds of variability edits, such as refactoring and
-reconfiguration.
-Based on this foundation, this thesis contributes a custom analysis tool called
-\texttt{MyAnalysis}.  
-The purpose of \texttt{MyAnalysis} is to identify and store variability edits that
-are relevant for understanding developer mistakes.  
-The recorded results are later analyzed using a topic-based approach, which
-groups refactoring and reconfiguration edits and collecting their diff messages.
-This makes it easier to study variability related diffs in more detail and to
-reason about recurring patterns in how such changes occur.
-The analysis focuses mainly on two classes of edits: refactoring and
-reconfiguration.  
-Refactoring describes changes where the structure of a presence condition is
-modified while its meaning remains the same.  
-Reconfiguration describes changes where the artifact remains unchanged, but the
-set of configurations in which it is included changes in a non-trivial way.
+For example, a minor edit to a conditional expression may silently expand or restrict the set of configurations in which a code fragment is active. These effects are not visible in standard diffs and are often undocumented in commit messages. As a result, developers and tools may overlook unintended changes to variability, which can lead to configuration-dependent faults that are difficult to detect.
 
-In addition, \texttt{MyAnalysis} extracts commit-level information such as commit
-identifiers and commit messages.  
-A simple keyword-based heuristic is used to flag commits that are likely related
-to bug fixes.  
-This allows the analysis to connect variability edits with developer intent as
-expressed in commit messages.
+The problem addressed in this thesis is therefore the limited ability of traditional diffs to explain the impact of changes to presence conditions. In particular, the thesis investigates how developer mistakes related to variability can be identified by analysing commits at the level of variability semantics rather than raw text differences.
 
-The solution is evaluated by applying \texttt{MyAnalysis} to a real-world
-configurable software system.  By analysing how often variability related diffs occur
-in practice and by examining which types of diffs are most common and studying the distribution of different variability edit types across large
-software repositories, the evaluation makes it possible to assess the overall
-extent of the problem.  
-This approach allows us to determine whether changes to presence conditions occur
-frequently and whether they represent a more substantial issue than initially
-expected.
-The results show that the analysis is able to distinguish between different types
-of variability changes and provides a more transparent view of how presence
-conditions evolve over time.  
-By going beyond traditional textual diffs, the approach makes variability changes
-visible that would otherwise be difficult to recognise in standard version
-control output.
+To address this problem, this thesis builds on the \textbf{DiffDetective} tool to explicitly identify changes in variability. DiffDetective analyses software evolution by mapping source code and annotations to structured representations and by classifying edits according to their effect on variability. Instead of treating all changes as simple additions or deletions, DiffDetective distinguishes different kinds of variability edits, such as \textbf{refactoring} and \textbf{reconfiguration}. Based on this foundation, this thesis contributes a custom analysis tool called \textbf{MyAnalysis}. The purpose of MyAnalysis is to identify and store variability edits that are relevant for understanding developer mistakes.
 
-In the following chapters, this thesis is structured as follows.  
-The next chapter provides background on configurable software and presence
-Conditions and explains the motivation for using variability aware
-differencing.  
-The subsequent chapter describes the design and implementation of
-\texttt{MyAnalysis}.  
-After that, the evaluation chapter presents the study and discusses the results.
-Finally, the thesis concludes with a summary of the main findings and an outline
-of possible directions for future work.
+The recorded results are later analysed using a topic-based approach, which groups refactoring and reconfiguration edits and collects their diff messages. This makes it easier to study variability-related diffs in more detail and to reason about recurring patterns in how such changes occur.
+
+The analysis focuses mainly on two classes of edits: \textbf{refactoring} and \textbf{reconfiguration}. Refactoring describes changes where the structure of a presence condition is modified while its meaning remains the same. Reconfiguration describes changes where the artifact remains unchanged, but the set of configurations in which it is included changes in a non-trivial way. In addition, MyAnalysis extracts commit-level information such as commit identifiers and commit messages. A simple keyword-based heuristic is used to flag commits that are likely related to bug fixes. This allows the analysis to connect variability edits with developer intent as expressed in commit messages.
+
+The solution is evaluated by applying MyAnalysis to a real-world configurable software system. By analysing how often variability-related diffs occur in practice, examining which types of diffs are most common, and studying the distribution of different variability edit types across large software repositories, the evaluation makes it possible to assess the overall extent of the problem.
+
+This approach allows us to determine whether changes to presence conditions occur frequently and whether they represent a more substantial issue than initially expected. The results show that the analysis is able to distinguish between different types of variability changes and provides a more transparent view of how presence conditions evolve over time. By going beyond traditional textual diffs, the approach makes variability changes visible that would otherwise be difficult to recognise in standard version control output.
+
+In the following chapters, this thesis is structured as follows. The next chapter provides background on configurable software and presence conditions and explains the motivation for using variability-aware differencing. The subsequent chapter describes the design and implementation of MyAnalysis. After that, the evaluation chapter presents the study and discusses the results. Finally, the thesis concludes with a summary of the main findings and an outline of possible directions for future work.
+
 % the following is to see how the individual pages look like (we assume a 2-page book so they should look differently)
-\clearpage
+% \clearpage
 
-trying with novel page
+% trying with novel page
 
-\clearpage
-and another one
+% \clearpage
+% and another one
