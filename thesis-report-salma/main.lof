@@ -3,4 +3,7 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Classification of edits to configurable software proposed by Bittner et al.\nobreakspace {}(2022).}}{6}{figure.2.1}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Comparison of commit-message styles in xterm and libssh. xterm commits use short, identifier-based messages with little semantic information, whereas libssh commits explicitly document corrective intent and error-related changes.}}{17}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Example of a bug-related reconfiguration commit in \texttt {libssh}. The commit message explicitly indicates corrective intent, and the edit class shows that an existing presence condition was modified rather than new functionality being added.}}{17}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Keyword frequency results for topic analysis of commits classified as Refactoring, Reconfiguration, or AddWithMapping in libssh.}}{19}{figure.4.3}%
 \addvspace {10\p@ }

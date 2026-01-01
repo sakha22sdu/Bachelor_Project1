@@ -20,14 +20,16 @@ Other variability mechanisms, including runtime configuration options and build-
 
 The implementation is realised using a combination of existing analysis frameworks and standard development tools. The analysis is implemented in Java and is designed to process real-world software repositories with publicly available version control histories.
 
-Git is used to access and traverse commit histories, enabling the analysis of software evolution at the level of individual commits. More specifically, the JGit Java library is employed to programmatically analyse public GitHub repositories. Standard Java libraries are used for file handling, data processing, and result serialisation. These libraries support reading source files, storing analysis results in a structured format, and preparing the output for further evaluation.
+Git is used to access and traverse commit histories, enabling the analysis of software evolution at the level of individual commits. In particular, the implementation uses the JGit Java library to analyse public GitHub repositories by programmatically cloning repositories and traversing their commit histories. Standard Java libraries are used for file handling, data processing and result serialisation, supporting the structured storage of analysis results for further evaluation.
+
+In addition, the implementation integrates a variability-aware differencing framework, DiffDetective, that provides the necessary abstractions for analysing configurable software systems. DiffDetective enables the analysis to reason about presence conditions and their evolution across commits. The specifics of this framework and its role in the implementation are described in the following section.
 
 \subsection{DiffDetective}
 DiffDetective is a variability-aware differencing Java library designed to analyse the evolution of configurable software systems. Unlike traditional line-based diff tools, DiffDetective explicitly models variability by representing conditional compilation directives and presence conditions as structured entities rather than plain text.
 
 DiffDetective parses annotated source code and represents the association between code fragments and their corresponding presence conditions. When comparing two revisions of a source file, the framework detects differences in these associations, allowing variability-related edits to be identified even when the underlying code remains unchanged.
 
-A central feature of DiffDetective is its ability to classify edits according to their semantic impact on variability. Based on the formal edit classification proposed by Bittner et al., DiffDetective distinguishes between different classes of variability-related edits, including refactoring, reconfiguration, generalisation, and specialisation. This classification provides a precise vocabulary for describing how presence conditions evolve across commits.
+A central feature of DiffDetective is its ability to classify edits according to their semantic impact on variability. Based on the formal edit classification proposed by Bittner et al.~\cite{Bittner2022}, DiffDetective distinguishes between different classes of variability-related edits, including refactoring, reconfiguration, generalisation, and specialisation. This classification provides a precise vocabulary for describing how presence conditions evolve across commits.
 
 In this thesis, DiffDetective serves as the foundation for identifying and classifying edits to presence conditions. The framework provides the core analysis capabilities, while the custom analysis component builds on its results to extract relevant metadata and prepare the data for further evaluation and topic-based analysis of commit messages.
 
@@ -56,7 +58,7 @@ Lastly, a topic analysis is applied to structure the extracted results. This ana
 
 \subsection{Specific Design Choices}
 
-A key characteristic of the implementation is that it builds a custom, commit-level analysis on top of an existing variability-aware differencing infrastructure rather than reimplementing repository traversal or differencing logic. By leveraging DiffDetective for commit traversal, parsing of annotated source code, and computation of variability-aware diffs, the implementation focuses exclusively on analysing and interpreting the resulting data.
+A key characteristic of the implementation is that it builds a custom, commit-level analysis on top of an existing variability-aware differencing infrastructure, rather than reimplementing repository traversal or differencing logic. By leveraging DiffDetective for commit traversal, parsing of annotated source code, and computation of variability-aware diffs, the implementation focuses exclusively on analysing and interpreting the resulting data.
 
 Another specific aspect is that the analysis operates directly on real-world repositories with publicly available version control histories, without requiring preprocessing or manual annotations beyond those already present in the code base. The analysis is executed sequentially per commit, which enables fine-grained reasoning about how variability and presence conditions evolve over time.
 
@@ -72,25 +74,37 @@ During execution, DiffDetective iterates over the commit history of the analysed
 
 \subsection{Initialisation}
 
-\begin{lstlisting}[language=Java, caption={Initialisation of analysis output in \texttt{MyAnalysis}}, label={lst:init}]
+\begin{lstlisting}[language=Java,
+caption={Initialisation of analysis output in \texttt{MyAnalysis}},
+label={lst:init}]
 @Override
 public void initializeResults(Analysis analysis) {
+    // Ensure that the output directory exists
     Files.createDirectories(outputDirectory);
 
-    Path analysisFile = Paths.get("commit_analysis_log.txt");
-    Path messageFile  = Paths.get("commit_messages.txt");
-
+    // Prepare analysis log file
+    Path analysisFile = Paths.get(
+        System.getProperty("user.dir"),
+        "commit_analysis_log.txt"
+    );
     Files.deleteIfExists(analysisFile);
-    Files.deleteIfExists(messageFile);
+    Files.createFile(analysisFile);
 
-    analysisWriter = new BufferedWriter(new FileWriter(analysisFile.toFile(), true));
-    messageWriter  = new BufferedWriter(new FileWriter(messageFile.toFile(), true));
+    // Writer for structured per-commit analysis results
+    analysisWriter = new BufferedWriter(
+        new FileWriter(analysisFile.toFile(), true)
+    );
 
+    ...
+
+    // Reset internal state to avoid duplicate output
     writtenCommits.clear();
+
+    ...
 }
 \end{lstlisting}
 
-The initialisation of the analysis is performed in the \texttt{initializeResults} method of the \texttt{MyAnalysis} class. This method prepares the output environment before commit traversal begins by ensuring that the output directory exists and by resetting previously generated result files to guarantee reproducibility across multiple executions.
+The initialisation of the analysis is performed in the \texttt{initializeResults} method of the \texttt{MyAnalysis} class, as illustrated in Listing~\ref{lst:init}. This method prepares the output environment before commit traversal begins by ensuring that the output directory exists and by resetting previously generated result files to guarantee reproducibility across multiple executions.
 
 During initialisation, two output files are created: \texttt{commit\_analysis\_log.txt} and \texttt{commit\_messages.txt}. The former stores a compact, structured summary of the analysis results for each commit, including commit identifiers and classification information. The latter stores the raw commit messages associated with each analysed commit. Separating these outputs allows structured data to be processed automatically while preserving commit messages for later manual inspection or qualitative analysis.
 
@@ -102,16 +116,34 @@ The classification of variability-related changes is implemented in the \texttt{
 
 \begin{lstlisting}[language=Java, caption={Classification of variability-aware edits in \texttt{MyAnalysis}}, label={lst:classify}]
 private EditClass classifyDiff(VariationDiff<?> diff) {
-    for (DiffNode<?> node : diff.computeAllNodesThat(n -> n.isArtifact())) {
-        EditClass editClass = ProposedEditClasses.Instance.match(node);
-        if (ProposedEditClasses.Refactoring.equals(editClass)
-            || ProposedEditClasses.Reconfiguration.equals(editClass)) {
-            return editClass;
+    // Stores the last applicable edit class encountered
+    EditClass editClass = null;
+
+    try {
+        // Iterate over all artefact nodes in the variability-aware diff
+        for (org.variantsync.diffdetective.variation.diff.DiffNode<?> node :
+                diff.computeAllNodesThat(n -> n.isArtifact())) {
+
+            // Match the current node against DiffDetective's proposed edit classes
+            editClass = ProposedEditClasses.Instance.match(node);
+            if (editClass == null) continue;
+
+            // Prioritise higher-level variability edits
+            if (editClass.equals(ProposedEditClasses.Refactoring)
+                    || editClass.equals(ProposedEditClasses.Reconfiguration)) {
+                return editClass;
+            }
         }
+    } catch (Exception e) {
+        // Log classification errors without interrupting the analysis
+        Logger.error("Error classifying diff: {}", e.getMessage());
     }
-    return null;
+
+    // Return the last matched edit class if no prioritised class was found
+    return editClass;
 }
 \end{lstlisting}
+
 
 For each artifact node, the method applies DiffDetective’s proposed edit-class matching mechanism to assign a semantic edit class. The implementation prioritises higher-level edit classes such as refactorings and reconfigurations. If such a classification is detected, the method terminates early and returns the corresponding edit class. If no prioritised edit class is found, the method returns \texttt{null}, indicating that no relevant edit class was detected by this heuristic.
 
@@ -119,6 +151,7 @@ In addition to structural change classification, MyAnalysis analyses commit mess
 
 \begin{lstlisting}[language=Java, caption={Heuristic for detecting bug-related commits}, label={lst:bug}]
 private boolean isBugRelated(String message) {
+    if (message == null) return false;
     String lower = message.toLowerCase();
     return lower.contains("bug")
         || lower.contains("fix")

@@ -21,6 +21,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * Analysis of current commit in a given repository.
+ */
 public class MyAnalysis implements Analysis.Hooks {
 
     private static Path outputDirectory;
@@ -28,7 +31,7 @@ public class MyAnalysis implements Analysis.Hooks {
 
     private BufferedWriter analysisWriter;
     private BufferedWriter messageWriter;
-    
+
     @Override
     public void initializeResults(Analysis analysis) {
         try {
@@ -41,6 +44,7 @@ public class MyAnalysis implements Analysis.Hooks {
             analysisWriter = new BufferedWriter(new FileWriter(analysisFile.toFile(), true));
             analysisWriter.write("==== Commit Analysis Log ====\n\n");
 
+            // Clean old commit messages
             Path messageFile = Paths.get(System.getProperty("user.dir"), "commit_messages.txt");
             Files.deleteIfExists(messageFile);
             Files.createFile(messageFile);
@@ -64,27 +68,28 @@ public class MyAnalysis implements Analysis.Hooks {
     @Override
     public boolean analyzeVariationDiff(Analysis analysis) {
         try {
+            // Get variation difference for current commit
             RevCommit commit = analysis.getCurrentCommit();
             VariationDiff<?> diff = analysis.getCurrentVariationDiff();
             String commitId = commit.getId().getName();
-            
+
+            // Log variation difference and bug details for the commit if not already done
             if (!writtenCommits.contains(commitId)) {
                 writtenCommits.add(commitId);
-                
+
                 String message = commit.getFullMessage().trim();
-                
+
                 EditClass classification = classifyDiff(diff);
                 boolean isBug = isBugRelated(message);
 
                 // Write simple analysis line
                 if (analysisWriter != null) {
                     analysisWriter.write(
-                        "Commit: " + commitId +
-                        " | Type: " + classification +
-                        " | Bug-related: " + isBug +
-                        " | Message: " + message.replace("\n", " ") +
-                        "\n"
-                    );
+                            "Commit: " + commitId +
+                                    " | Type: " + classification +
+                                    " | Bug-related: " + isBug +
+                                    " | Message: " + message.replace("\n", " ") +
+                                    "\n");
                     analysisWriter.flush();
                 }
 
@@ -103,15 +108,23 @@ public class MyAnalysis implements Analysis.Hooks {
         return true;
     }
 
+    /**
+     * Return the type for each node whose type is either Refactoring
+     * or Reconfiguration
+     * 
+     * @param diff
+     * @return node type
+     */
     private EditClass classifyDiff(VariationDiff<?> diff) {
         EditClass editClass = null;
 
         try {
-            for (org.variantsync.diffdetective.variation.diff.DiffNode<?> node :
-                    diff.computeAllNodesThat(n -> n.isArtifact())) {
+            for (org.variantsync.diffdetective.variation.diff.DiffNode<?> node : diff
+                    .computeAllNodesThat(n -> n.isArtifact())) {
 
                 editClass = ProposedEditClasses.Instance.match(node);
-                if (editClass == null) continue;
+                if (editClass == null)
+                    continue;
 
                 if (editClass.equals(ProposedEditClasses.Refactoring)
                         || editClass.equals(ProposedEditClasses.Reconfiguration)) {
@@ -125,8 +138,16 @@ public class MyAnalysis implements Analysis.Hooks {
         return editClass;
     }
 
+    /**
+     * Return true if commit message includes bug-like words such as bug, fix and
+     * etc.
+     * 
+     * @param message
+     * @return true if bug-related
+     */
     private boolean isBugRelated(String message) {
-        if (message == null) return false;
+        if (message == null)
+            return false;
         String lower = message.toLowerCase();
         return lower.contains("bug")
                 || lower.contains("fix")
@@ -137,18 +158,27 @@ public class MyAnalysis implements Analysis.Hooks {
 
     @Override
     public void endBatch(Analysis analysis) throws Exception {
+        // Analysis done, log writers are closed
         Logger.info("Analysis complete — {} unique commits analyzed.", writtenCommits.size());
-        if (analysisWriter != null) analysisWriter.close();
-        if (messageWriter != null) messageWriter.close();
+        if (analysisWriter != null)
+            analysisWriter.close();
+        if (messageWriter != null)
+            messageWriter.close();
     }
 
+    /**
+     * Create analysis of given repository
+     * 
+     * @param repo
+     * @param outputDir
+     * @return output directory with analysis of current commit
+     */
     public static Analysis Create(Repository repo, Path outputDir) {
         outputDirectory = outputDir;
         return new Analysis(
                 "MyAnalysis",
                 List.of(new MyAnalysis()),
                 repo,
-                outputDir
-        );
+                outputDir);
     }
 }

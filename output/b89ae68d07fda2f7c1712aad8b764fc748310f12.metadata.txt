@@ -1,0 +1,7 @@
+analysis: MyAnalysis
+repository: gimp
+total commits: 0
+#Error[#endif without #if]: 1
+#Error[a line continuation was detected but there are no more lines]: 1
+#Error[the extracted formula cannot be parsed]: 24
+#Error[not all annotations closed]: 5

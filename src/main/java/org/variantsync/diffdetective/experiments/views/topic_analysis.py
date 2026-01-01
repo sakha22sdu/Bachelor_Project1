@@ -20,9 +20,9 @@ STOPWORDS = {
 def find_refac_reconf_commits(analysis_path: Path) -> set[str]:
     """
     Parse commit_analysis_log.txt and return IDs whose Type is
-    Refactoring or Reconfiguration.
+    Refactoring, Reconfiguration, or AddWithMapping.
     """
-    refac_types = {"Refactoring", "Reconfiguration"}
+    interesting_types = {"refactoring", "reconfiguration", "addwithmapping"}
     interesting_ids: set[str] = set()
 
     with analysis_path.open("r", encoding="utf-8", errors="ignore") as f:
@@ -30,27 +30,22 @@ def find_refac_reconf_commits(analysis_path: Path) -> set[str]:
             if not line.startswith("Commit:"):
                 continue
 
-            # Expected format:
-            # Commit: <id> | Type: <type> | Bug-related: ... | Message: ...
             parts = [p.strip() for p in line.split("|")]
             if len(parts) < 2:
                 continue
 
             # Commit ID
-            commit_part = parts[0]  # "Commit: <id>"
-            _, cid = commit_part.split("Commit:", 1)
+            _, cid = parts[0].split("Commit:", 1)
             cid = cid.strip()
 
-            # Type
-            type_part = parts[1]  # "Type: <type>"
-            _, ctype = type_part.split("Type:", 1)
-            ctype = ctype.strip()
+            # Type (normalize: lowercase + remove punctuation like commas)
+            _, ctype = parts[1].split("Type:", 1)
+            ctype = re.sub(r"[^\w]+", "", ctype.strip().lower())  # keeps letters/numbers/_ only
 
-            if ctype in refac_types:
+            if ctype in interesting_types:
                 interesting_ids.add(cid)
 
     return interesting_ids
-
 
 def load_messages_for_ids(messages_path: Path, wanted_ids: set[str]) -> list[str]:
     """
@@ -116,15 +111,14 @@ def analyze_keywords(messages: list[str]) -> Counter:
 def write_report(output_path: Path,
                  wanted_ids: set[str],
                  messages: list[str],
-                 keyword_freq: Counter,
-                 top_n: int = 50):
+                 keyword_freq: Counter):
     with output_path.open("w", encoding="utf-8") as out:
-        out.write("==== Topic Analysis: Refactoring / Reconfiguration ====\n\n")
+        out.write("==== Topic Analysis: Refactoring / Reconfiguration / AddWithMapping ====\n\n")
         out.write(f"Number of matching commits: {len(wanted_ids)}\n")
         out.write(f"Number of messages loaded : {len(messages)}\n\n")
 
-        out.write("## Top {} keywords\n".format(top_n))
-        for word, count in keyword_freq.most_common(top_n):
+        out.write("## Keywords ordered by frequency\n")
+        for word, count in keyword_freq.most_common():
             out.write(f"{word:20s} {count}\n")
 
         out.write("\n\n## Messages used for analysis\n\n")
@@ -157,12 +151,6 @@ def main():
         default=Path("topic_analysis_refac_reconf.txt"),
         help="Output report file",
     )
-    parser.add_argument(
-        "--top",
-        type=int,
-        default=50,
-        help="How many top keywords to show",
-    )
 
     args = parser.parse_args()
 
@@ -181,20 +169,10 @@ def main():
     keyword_freq = analyze_keywords(messages)
 
     # 4) Write report
-    write_report(args.output, wanted_ids, messages, keyword_freq, top_n=args.top)
+    write_report(args.output, wanted_ids, messages, keyword_freq)
     print(f"[topic-analysis] Wrote report to {args.output}")
 
 
 if __name__ == "__main__":
     main()
 
-"""
-Topic analysis for Refactoring / Reconfiguration commits.
-
-Steps:
-1. Read commit_analysis_log.txt to find commits whose Type is
-   Refactoring or Reconfiguration.
-2. Read commit_messages.txt and collect the messages for those commits.
-3. Tokenize messages, remove stopwords, and count word frequencies.
-4. Write a report to topic_analysis_refac_reconf.txt (default).
-"""

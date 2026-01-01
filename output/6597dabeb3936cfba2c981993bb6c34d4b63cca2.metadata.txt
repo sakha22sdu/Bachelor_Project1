@@ -1,7 +1,7 @@
 analysis: MyAnalysis
 repository: gimp
 total commits: 0
-#Error[#else or #elif without #if]: 1
 #Error[not all annotations closed]: 26
-#Error[missing diff symbol]: 5
+#Error[#else or #elif without #if]: 1
 #Error[a line continuation was detected but there are no more lines]: 83
+#Error[missing diff symbol]: 5

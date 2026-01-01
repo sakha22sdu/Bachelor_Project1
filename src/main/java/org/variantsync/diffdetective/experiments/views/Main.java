@@ -7,9 +7,13 @@ import org.variantsync.diffdetective.variation.diff.parse.VariationDiffParseOpti
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+/**
+ * Starts analysis of a repository.
+ * See {@link org.variantsync.diffdetective.analysis.Analysis.MyAnalysis}
+ */
 public class Main {
-    public static final VariationDiffParseOptions VARIATION_DIFF_PARSE_OPTIONS =
-            new VariationDiffParseOptions(true, false);
+    public static final VariationDiffParseOptions VARIATION_DIFF_PARSE_OPTIONS = new VariationDiffParseOptions(true,
+            false);
 
     public static void main(String[] args) {
         Path repoPath = Paths.get("repositories/gimp");
@@ -18,10 +22,11 @@ public class Main {
         System.out.println("Running MyAnalysis on gimp...");
 
         Repository repo = Repository.fromDirectory(repoPath, repoPath.getFileName().toString());
-        
+
         Analysis.forEachCommit(() -> MyAnalysis.Create(repo, outputDir));
     }
 
 }
+
 
 

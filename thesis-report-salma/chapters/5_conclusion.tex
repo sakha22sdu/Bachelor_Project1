@@ -4,3 +4,17 @@
 % What is now better than before?
 % What are the lessons learned?
 % How could we build on that work?
+
+This thesis investigated changes in variability in configurable software systems, with a particular focus on presence conditions implemented, using the C/C++ preprocesser. The motivation for this work was that traditional text-based diff tools are limited in their ability to reveal the semantic impact of such changes. Even small modifications to conditional compilation expressions can significantly alter which configurations include specific code, without this being clearly visible in conventional version control diffs.
+
+To address this challenge DiffDetective was used as a variability-aware differencing framework, that classifies changes according to their semantic effect on variability, including Refactoring, Reconfiguration, Generalization and Specialization. Building on this framework a custom analysis component was implemented to extract commit data, store classification results and associate variability changes with commit messages. This enabled an investigation of both the technical nature of variability changes, and how these changes are communicated by developers.
+
+The results show that variability-related changes are a recurring part of real-world software, and are often introduced during maintenance, build fixes or platform-related adjustments. While some commit messages explicitly reference issues with conditional compilation, many variability-changing commits do not clearly indicate their potential impact. This suggests that changes affecting variability are not always treated as conceptually distinct from other code modifications, despite their possible consequences for the configuration space.
+
+
+
+
+
+
+\section{Git Repository}
+\url{https://github.com/sakha22sdu/Bachelor_Project1/tree/main}.

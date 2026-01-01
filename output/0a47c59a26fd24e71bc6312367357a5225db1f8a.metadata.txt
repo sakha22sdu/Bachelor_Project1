@@ -1,0 +1,7 @@
+analysis: MyAnalysis
+repository: gimp
+total commits: 0
+#Error[could not obtain full diff]: 2
+#Error[a line continuation was detected but there are no more lines]: 5
+#Error[#else or #elif without #if]: 16
+#Error[not all annotations closed]: 11

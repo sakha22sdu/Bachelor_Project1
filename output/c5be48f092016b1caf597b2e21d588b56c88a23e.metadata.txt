@@ -1,0 +1,8 @@
+analysis: MyAnalysis
+repository: postgresql
+total commits: 0
+#Error[missing diff symbol]: 1
+#Error[not all annotations closed]: 47
+#Error[#else or #elif without #if]: 2
+#Error[the extracted formula cannot be parsed]: 9
+#Error[a line continuation was detected but there are no more lines]: 44

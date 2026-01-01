@@ -2361,11 +2361,15 @@
     <bcf:citekey order="15">Bittner2022</bcf:citekey>
     <bcf:citekey order="16">Bittner2022</bcf:citekey>
     <bcf:citekey order="17">Bittner2022</bcf:citekey>
-    <bcf:citekey order="18">Wohlin2024_experimentationInSE</bcf:citekey>
-    <bcf:citekey order="19">apel13</bcf:citekey>
-    <bcf:citekey order="20">DBLP:conf/icse/LiebigALKS10</bcf:citekey>
-    <bcf:citekey order="21">Bittner2022</bcf:citekey>
-    <bcf:citekey order="22">Wohlin2024_experimentationInSE</bcf:citekey>
+    <bcf:citekey order="18">Bittner2022</bcf:citekey>
+    <bcf:citekey order="19">selfAdmittedIssues2023</bcf:citekey>
+    <bcf:citekey order="20">selfAdmittedIssues2023</bcf:citekey>
+    <bcf:citekey order="21">Wohlin2024_experimentationInSE</bcf:citekey>
+    <bcf:citekey order="22">apel13</bcf:citekey>
+    <bcf:citekey order="23">DBLP:conf/icse/LiebigALKS10</bcf:citekey>
+    <bcf:citekey order="24">Bittner2022</bcf:citekey>
+    <bcf:citekey order="25">selfAdmittedIssues2023</bcf:citekey>
+    <bcf:citekey order="26">Wohlin2024_experimentationInSE</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

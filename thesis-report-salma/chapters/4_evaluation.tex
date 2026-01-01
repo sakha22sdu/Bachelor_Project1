@@ -1,17 +1,273 @@
-\section{Evaluation}
-
-\subsection{Setup}
+\chapter{Evaluation}
+This chapter evaluates the implementation presented in this thesis. It describes the experimental setup, reports the results obtained from analysing the selected subject systems, and discusses threats to the validity of the evaluation. In addition, the findings are reflected upon in a subsequent discussion, where the results are interpreted, limitations are considered, and the strengths and weaknesses of the proposed approach are examined.
+\section{Setup}
 % What repositories have you examined?
+The evaluation is conducted on a set of real-world, configurable software systems that use preprocessor-based variability. These systems constitute the subject systems of the study. The selection of subject systems was performed incrementally. Initially, smaller repositories were chosen in order to validate the analysis workflow and to assess the behaviour of the implementation on a manageable commit history.
+As an initial subject system, the repository \texttt{xterm} was selected. The analysed revision range of \texttt{xterm} contains 112 commits and exhibits non-trivial use of conditional compilation. This limited size made it possible to inspect the analysis results in detail and to validate the correctness of the implementation before scaling to larger systems. After successfully analysing \texttt{xterm}, additional subject systems with larger commit histories were considered. In particular, the repository \texttt{libssh} was analysed, which contains a substantially larger number of commits and more complex variability-related code. This allowed the evaluation to assess the behaviour of the implementation on a more realistic and demanding subject system.
 
-\subsection{Results}
+Each subject system was cloned locally and analysed using \texttt{DiffDetective} in combination with the custom analysis component \texttt{MyAnalysis}. The repositories were provided to DiffDetective as input and processed commit by commit. For each pair of successive commits, DiffDetective computed a variability-aware diff, capturing changes to annotated source code together with their associated presence conditions. \texttt{MyAnalysis} was executed as part of this traversal and recorded commit-level metadata and classification results.
+
+The evaluation focuses on measuring variability-related changes at commit level. For each analysed commit, the implementation records the assigned variability edit class, as provided by DiffDetective, and whether the commit message indicates a potential bug fix based on a keyword-based heuristic. These measurements support both quantitative analysis, such as counting the frequency of different edit classes, and qualitative analysis, such as inspecting individual commit messages and corresponding code changes \cite{selfAdmittedIssues2023}.
+
+To support higher-level interpretation of the results, a topic analysis was applied as a post-processing step. The topic analysis focuses specifically on commits classified as \emph{Refactoring} or \emph{Reconfiguration}, as these represent higher-level changes to variability. A lightweight keyword-frequency approach was used to analyse the commit messages associated with these commits, allowing recurring terms and themes to be identified without relying on complex semantic models \cite{selfAdmittedIssues2023}.
+
+\section{Results}
 % What were the results
+This section presents the results of applying the proposed analysis to the selected subject systems. 
+The results are reported both quantitatively and qualitatively, focusing on 
+(1) how often different types of variability-related changes occur, 
+(2) how frequently commits are classified as bug-related, and 
+(3) which recurring themes can be observed through topic analysis of commit messages. 
+In addition, selected commits are inspected manually to validate and interpret the automated results 
+and to illustrate how variability-related changes manifest in practice.
+
+\subsection{Overview of Analysed Commits}
+
+Across all subject systems, the analysis processes each repository commit by commit using DiffDetective 
+together with the custom analysis component \texttt{MyAnalysis}. For each commit, a variability-aware 
+diff is computed and classified, and the corresponding commit message is analysed. This enables a 
+combined view of structural changes to variability and the developers’ textual explanations of those 
+changes.
+
+As an initial step, smaller repositories were analysed to validate the feasibility and correctness of 
+the approach. The first subject system was \texttt{xterm}, which contains approximately 112 commits in 
+the analysed revision range. This repository was chosen deliberately because of its limited size, which 
+made it possible to manually inspect results and correlate automated classifications with actual code 
+changes in detail.
+
+After validating the approach on \texttt{xterm}, larger repositories such as \texttt{libssh} were 
+analysed. These systems contain substantially more commits and more complex variability, allowing the 
+evaluation to assess how the approach scales and how well it performs on realistic, non-trivial 
+software systems.
+
+DiffDetective traverses the complete commit history of each subject system (for example, 5\,352 commits 
+for \texttt{libssh}). However, the evaluation dataset reported in Table~4.1 is based on the commits that 
+were successfully recorded in the per-commit output logs (\texttt{commit\_analysis\_log.txt} and 
+\texttt{commit\_messages.txt}). The analysis is executed with multi-threading enabled, and the output 
+files are reset during initialisation. As a result, the final log files may contain only a subset of 
+the traversed commits. Consequently, the number of commits reported in Table~4.1 should be interpreted 
+as the number of commits available for evaluation in the produced logs, rather than the total number of 
+commits in the repository history.
+
+For \texttt{xterm}, 111 commits were analysed, none of which were classified as bug-related based on 
+commit-message analysis.
+
+For \texttt{libssh}, DiffDetective traversed the full commit history of 5\,352 commits. However, due to 
+repeated initialisation of the analysis and overwriting of output files during multi-threaded execution, 
+the final per-commit log contains only a subset of the traversed commits. Consequently, quantitative 
+results for \texttt{libssh} are interpreted qualitatively rather than as absolute frequencies.
+
+Despite this limitation, the analysed subset of \texttt{libssh} commits shows a clear tendency toward 
+corrective maintenance. A substantial number of commits in the final log explicitly indicate corrective 
+intent in their messages (e.g.\ using terms such as \emph{fix}, \emph{bug}, or \emph{error}). This 
+observation suggests that developers in \texttt{libssh} frequently document errors and fixes in commit 
+messages, particularly when modifying conditional compilation logic, and stands in contrast to the 
+\texttt{xterm} repository, where such intent is largely absent from commit messages.
+
+
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.45\linewidth}
+\centering
+\textbf{xterm commit messages}
+\vspace{0.3em}
+
+\fbox{
+\begin{minipage}{0.95\linewidth}
+\small
+\texttt{Commit ID: 73ac00b3}\\
+\texttt{xterm-331}
+
+\vspace{0.5em}
+
+\texttt{Commit ID: 5c791e88}\\
+\texttt{xterm-330}
+\end{minipage}
+}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\linewidth}
+\centering
+\textbf{libssh commit messages}
+\vspace{0.3em}
+
+\fbox{
+\begin{minipage}{0.95\linewidth}
+\small
+\texttt{Commit ID: 41dd2a2a}\\
+Check return values of option setter.
+
+\vspace{0.5em}
+
+\texttt{Commit ID: 2aa81c05}\\
+Add memory error checks for \texttt{strdup()}.
+\end{minipage}
+}
+\end{minipage}
+
+\caption{Comparison of commit-message styles in xterm and libssh. 
+xterm commits use short, identifier-based messages with little semantic information, 
+whereas libssh commits explicitly document corrective intent and error-related changes.}
+\label{fig:commit-message-comparison}
+\end{figure}
+
+\subsection{Bug-Related Commits}
+
+In addition to the structural classification of variability-related changes, the analysis identifies
+commits that are likely related to bug fixing based on commit-message keywords. This approach follows
+prior work on self-admitted issues, which demonstrates that commit messages often encode developers’
+corrective intent and can therefore be used to study maintenance activities.
+
+The analysed subject systems differ strongly with respect to bug-related commits. In xterm, none
+of the analysed commits were classified as bug-related based on commit-message analysis. In
+contrast, the analysed subset of commits from libssh shows a clear tendency toward corrective
+maintenance, which can be seen in the figure Figure~\ref{fig:libssh_bug_reconfig}. A substantial number of commit messages
+explicitly contain terms such as \emph{fix}, \emph{bug}, \emph{error}, \emph{leak}, or \emph{segfault}.
+This observation is consistent with findings from self-admitted issues research, which report that
+developers frequently document defects and fixes directly in commit messages using natural
+language.
+
+
+\begin{figure}[t]
+\centering
+\begin{minipage}{0.95\linewidth}
+\begin{verbatim}
+Commit: 7ceaf5c43af77666093638e7a5e67faf86aba9cc
+Type: Reconfiguration
+Bug-related: true
+Message: Fix the ifdefs.
+git-svn-id: svn+ssh://svn.berlios.de/svnroot/repos/libssh/trunk@235
+\end{verbatim}
+\end{minipage}
+\caption{Example of a bug-related reconfiguration commit in \texttt{libssh}.
+The commit message explicitly indicates corrective intent, and the edit class
+shows that an existing presence condition was modified rather than new
+functionality being added.}
+\label{fig:libssh_bug_reconfig}
+\end{figure}
+
+
+The high occurrence of bug-related commits in \texttt{libssh} suggests that variability-related code
+is often involved in corrective maintenance. This is particularly evident in low-level system
+components that rely heavily on conditional compilation and configuration-dependent behaviour. In
+such contexts, incorrect or incomplete presence conditions can easily lead to build failures,
+runtime errors, or missing functionality, which developers subsequently address by reconfiguring or
+refactoring preprocessor directives.
+
+Manual inspection of selected bug-related commits confirms that the automated classification aligns
+with the actual changes in most cases. Typical examples include fixing incorrect \texttt{\#ifdef}
+conditions, adding missing error checks under specific configurations, or correcting
+platform-dependent compilation paths. At the same time, the analysis also reveals limitations of the
+keyword-based heuristic. Some commits are classified as bug-related even though they primarily address
+maintainability concerns, such as fixing build warnings or cleaning up configuration logic. These
+cases illustrate that commit-message-based classification captures corrective intent rather than
+definitive runtime faults and should be interpreted accordingly.
+
+\subsection{Topic Analysis of Commit Messages}
+
+To further interpret variability-related changes, the commit messages associated with refactoring
+and reconfiguration edits were analysed to identify recurring themes. The results reveal a small and
+stable set of keywords that occur repeatedly across variability-related commits, providing insight
+into the motivations behind variability evolution.
+
+Frequently occurring terms include \emph{fix}, \emph{ifdef}, \emph{add}, \emph{support}and
+configuration-related identifiers. The repeated presence of these keywords indicates that changes to
+variability are predominantly driven by corrective maintenance and configuration management rather
+than by the introduction of new functionality. In particular, references to conditional compilation
+suggest that developers frequently revise and correct presence conditions to resolve
+misconfigurations or build-related issues. Results from the topic analysis, keyword frequencies, is illustrated in Figure~\ref{fig:topic-analysis-keywords}.'
+
+The recurring nature of these terms also suggests that the semantic impact of changes to conditional
+compilation directives is difficult to anticipate. Although edits to \texttt{\#if}- or
+\texttt{\#ifdef}-based logic often appear local, they can alter the set of configurations in which
+code is included, leading to unintended effects that only become visible later. Overall, the topic
+analysis supports the conclusion that variability evolution in real-world systems is largely driven
+by ongoing maintenance and error correction, highlighting variability management as a recurring and
+non-trivial challenge during software evolution.
+
+
+\begin{figure}[t]
+\centering
+\begin{lstlisting}[basicstyle=\ttfamily\small, frame=single]
+==== Topic Analysis: Refactoring / Reconfiguration / AddWithMapping ====
+
+Number of matching commits: 9
+Number of messages loaded : 9
+
+Keywords ordered by frequency:
+fix                  3
+support              3
+add                  2
+missing              2
+ifdef                2
+ssh                  2
+agent                2
+build                1
+windows              1
+ifdefs               1
+cleanup              1
+define               1
+check                1
+libssh               1
+header               1
+poll                 1
+channel_poll         1
+not                  1
+yet                  1
+channel_select       1
+win32                1
+bug                  1
+debian               1
+rules                1
+executable           1
+experimental         1
+
+...
+
+\end{lstlisting}
+\caption{Keyword frequency results for topic analysis of commits classified as
+Refactoring, Reconfiguration, or AddWithMapping in libssh.}
+\label{fig:topic-analysis-keywords}
+\end{figure}
+
+
+\subsection{Error-Related Changes}
+
+In addition to classifying variability-related changes, the evaluation analyses how often commits are associated with errors and how such errors manifest in practice. Error-related commits are identified using a lightweight, keyword-based heuristic applied to commit messages, as described in Chapter~3. A commit is considered error-related if its message contains commonly used terms such as \emph{bug}, \emph{fix}, \emph{error}, \emph{issue}, or \emph{defect}. Following prior work on self-admitted issues, this heuristic is interpreted as an indicator of corrective intent rather than a definitive classification of functional defects.
+
+In addition to error-related commits inferred from commit messages, the analysis also reports errors that occur during the parsing of annotated source code and presence conditions. These parsing errors indicate situations in which real-world preprocessor usage violates assumptions of a well-formed annotation structure. For \texttt{libssh}, the exported metadata reports 97 occurrences of line-continuation errors, 34 cases of unclosed annotations, 4 occurrences of \texttt{\#else} or \texttt{\#elif} without a matching \texttt{\#if}, and 6 cases where the extracted presence-condition formula could not be parsed. Similar parsing issues are observed in \texttt{xterm}, where a high number of unclosed annotations and line-continuation errors occur despite the repository’s relatively small size.
+
+These errors indicate that conditional compilation in real-world systems is often irregular and shaped by build-system constraints rather than strictly adhering to idealised preprocessor usage. Qualitative inspection shows that such cases typically arise from complex commented-out directives, or unconventional formatting. As a result, not all commits can be analysed reliably, and parsing errors represent both a limitation of the analysis and empirical evidence of variability-related complexity.
+
+\paragraph{Quantitative Results}
+The analysed subject systems differ strongly with respect to error-related changes. In \texttt{libssh}, a substantial proportion of the analysed commits are classified as error-related based on commit-message keywords. This indicates that corrective maintenance is a frequent activity in the evolution of variability-related code. Many of these commits are associated with refactoring or reconfiguration edits, suggesting that higher-level changes to presence conditions are often motivated by the need to correct incorrect or incomplete configurations rather than by feature evolution alone.
+
+In contrast, \texttt{xterm} exhibits no commits that are classified as error-related based on commit-message analysis, despite the presence of numerous parsing and annotation-related issues. This discrepancy highlights that the absence of explicit error-related keywords in commit messages does not imply the absence of underlying problems. Instead, it reflects differences in developer communication practices and conventions regarding how issues are documented.
+
+\paragraph{Qualitative Inspection}
+To complement the quantitative analysis, selected error-related commits were inspected manually. In most cases, the commit message accurately reflects the nature of the change, and the corresponding variability-aware diff confirms that the commit addresses an actual defect. Typical examples include correcting incorrect \texttt{\#ifdef} conditions, adding missing error checks under specific configurations, or fixing platform-dependent compilation paths.
+
+A recurring pattern is that many error-related commits address misconfigurations introduced by earlier changes. Edits to conditional compilation directives may appear local but can affect a large portion of the configuration space. As a result, developers often discover unintended effects only after the fact, leading to subsequent corrective commits. This explains why similar corrective patterns recur over time.
+
+At the same time, some commits flagged as error-related primarily address maintainability concerns, such as build warnings or code cleanup, rather than functional defects. These cases illustrate that commit-message-based classification tends to over-approximate error-related changes and should be interpreted as an indicator of corrective intent rather than a precise fault classification.
+
+Overall, the results show that error correction is a central driver of variability evolution in actively maintained systems such as \texttt{libssh}. By combining variability-aware structural analysis with commit-message inspection, the evaluation captures both explicit and implicit error-related activities.
+
 
 \subsection{Threats to Validity}
 \cite{Wohlin2024_experimentationInSE}
 
+The evaluation is subject to several threats to validity. External validity is limited by the selection of subject systems. Only two repositories were analysed, and both are implemented in C using preprocessor-based variability. While these systems are representative of a common class of configurable software, the results may not generalise to other languages or variability mechanisms.
 
-% 
-\chapter{Discussion}
-%either we have discussion as chapter or as section of the evaluation both is find and depends a little on the amount of content we have to discuss
+Scalability also poses a limitation. For large repositories with extensive commit histories, repeated initialisation and output overwriting during multi-threaded execution reduced the number of commits available for quantitative analysis. As a result, some findings are interpreted qualitatively rather than as absolute frequencies. Analysing larger numbers of systems and improving result aggregation are considered out of scope for this thesis.
 
-% discussion what did go well, what not so well...
+Internal validity is affected by the use of keyword-based heuristics for identifying error-related commits. While manual inspection suggests that many classifications are accurate, the heuristic may both miss error-related commits and incorrectly flag maintenance-oriented changes as bug-related. This threat is mitigated by combining commit-message analysis with variability-aware structural classification.
+
+\subsection{Discussion}
+
+The evaluation demonstrates that variability-related changes are closely tied to error correction and maintenance activities. In particular, the results show that developer mistakes in conditional compilation are not necessarily frequent in terms of explicit documentation, but they can be severe in impact, affecting large parts of the configuration space and requiring subsequent corrective commits.
+
+The combination of variability-aware differencing and commit-message analysis provides a more transparent view of how presence conditions evolve over time. While commit messages alone cannot fully explain variability evolution, they provide valuable contextual information when interpreted alongside structural edit classifications.
+
+Future work could extend this approach to additional subject systems, improve scalability of result collection, or incorporate more advanced NLP techniques. Moreover, integrating variability-aware analysis directly into development tools could help developers better anticipate the semantic impact of changes to conditional compilation and reduce the likelihood of configuration-dependent errors.
+

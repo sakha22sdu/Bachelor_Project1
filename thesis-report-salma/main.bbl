@@ -19,6 +19,143 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{apel13}{book}{}
+      \name{author}{4}{}{%
+        {{hash=a4f57072771b98df56b8f8205f384d00}{%
+           family={Apel},
+           familyi={A\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ca905abe1dc0ab0f9307c7b01721b65f}{%
+           family={Batory},
+           familyi={B\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f0fe27e2b5f525a3b4c50ce35e1a7cee}{%
+           family={Kästner},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2a5ae6c3a7deb62e4508c393839b89cc}{%
+           family={Saake},
+           familyi={S\bibinitperiod},
+           given={Gunter},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{051c49bf21dc0ed69a84fb6df6f8b7c0}
+      \strng{fullhash}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \strng{bibnamehash}{051c49bf21dc0ed69a84fb6df6f8b7c0}
+      \strng{authorbibnamehash}{051c49bf21dc0ed69a84fb6df6f8b7c0}
+      \strng{authornamehash}{051c49bf21dc0ed69a84fb6df6f8b7c0}
+      \strng{authorfullhash}{ac027c3c5130b8434cdabe7f07d18fc4}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-3-642-37520-0}
+      \field{title}{Feature-Oriented Software Product Lines: Concepts and Implementation}
+      \field{year}{2013}
+      \verb{doi}
+      \verb 10.1007/978-3-642-37521-7
+      \endverb
+    \endentry
+    \entry{Bittner2022}{article}{}
+      \name{author}{4}{}{%
+        {{hash=68dfea37be5e9798f2652f10dc4a69af}{%
+           family={Bittner},
+           familyi={B\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=451b3ceb6d62afdcd1df7bf792745509}{%
+           family={Berger},
+           familyi={B\bibinitperiod},
+           given={Thorsten},
+           giveni={T\bibinitperiod}}}%
+        {{hash=fe3ffff2de1216320c4ec62d28481c25}{%
+           family={Linsbauer},
+           familyi={L\bibinitperiod},
+           given={Andrés},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f10811c0fe4668c1f71e14016c11f4bf}{%
+           family={Grünbacher},
+           familyi={G\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{46e15cb6b261101a18ba72b1429c04a2}
+      \strng{fullhash}{f3ed5b58da9ab16dd41555abdec151b7}
+      \strng{bibnamehash}{46e15cb6b261101a18ba72b1429c04a2}
+      \strng{authorbibnamehash}{46e15cb6b261101a18ba72b1429c04a2}
+      \strng{authornamehash}{46e15cb6b261101a18ba72b1429c04a2}
+      \strng{authorfullhash}{f3ed5b58da9ab16dd41555abdec151b7}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Software Engineering}
+      \field{number}{11}
+      \field{title}{A Classification of Variability Edits in Source Code}
+      \field{volume}{48}
+      \field{year}{2022}
+      \field{pages}{4420\bibrangedash 4441}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1109/TSE.2021.3126330
+      \endverb
+    \endentry
+    \entry{DBLP:conf/icse/LiebigALKS10}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=45caedd921244c9a9e646acb02d58519}{%
+           family={Liebig},
+           familyi={L\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+        {{hash=a4f57072771b98df56b8f8205f384d00}{%
+           family={Apel},
+           familyi={A\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a541d0e1e3a14a2526ca1371a7a44339}{%
+           family={Lengauer},
+           familyi={L\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f0fe27e2b5f525a3b4c50ce35e1a7cee}{%
+           family={Kästner},
+           familyi={K\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=2a5ae6c3a7deb62e4508c393839b89cc}{%
+           family={Saake},
+           familyi={S\bibinitperiod},
+           given={Gunter},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{5e55f58b11d833c227d01a94b7244bb5}
+      \strng{fullhash}{88623e007d47d146fcac5292a0b87a4a}
+      \strng{bibnamehash}{5e55f58b11d833c227d01a94b7244bb5}
+      \strng{authorbibnamehash}{5e55f58b11d833c227d01a94b7244bb5}
+      \strng{authornamehash}{5e55f58b11d833c227d01a94b7244bb5}
+      \strng{authorfullhash}{88623e007d47d146fcac5292a0b87a4a}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 32nd International Conference on Software Engineering (ICSE)}
+      \field{title}{An Analysis of the Variability in Forty Preprocessor-Based Software Product Lines}
+      \field{year}{2010}
+      \field{pages}{105\bibrangedash 114}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1145/1806799.1806815
+      \endverb
+    \endentry
     \entry{Wohlin2024_experimentationInSE}{book}{}
       \name{author}{6}{}{%
         {{hash=e1ce15e2eeb53e3fc8c6035fd761594b}{%
@@ -72,9 +209,7 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{Bittner2022}
-  \missing{DBLP:conf/icse/LiebigALKS10}
-  \missing{apel13}
+  \missing{selfAdmittedIssues2023}
 \endrefsection
 \endinput
 

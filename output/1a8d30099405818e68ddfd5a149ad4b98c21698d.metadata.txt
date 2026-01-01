@@ -1,0 +1,6 @@
+analysis: MyAnalysis
+repository: gimp
+total commits: 0
+#Error[a line continuation was detected but there are no more lines]: 21
+#Error[missing diff symbol]: 26
+#Error[not all annotations closed]: 5

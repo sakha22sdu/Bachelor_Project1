@@ -1,0 +1,4 @@
+analysis: MyAnalysis
+repository: gimp
+total commits: 0
+#Error[not all annotations closed]: 7

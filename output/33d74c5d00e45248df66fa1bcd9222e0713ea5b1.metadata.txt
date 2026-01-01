@@ -1,0 +1,8 @@
+analysis: MyAnalysis
+repository: postgresql
+total commits: 0
+#Error[not all annotations closed]: 61
+#Error[#else or #elif without #if]: 2
+#Error[the extracted formula cannot be parsed]: 11
+#Error[a line continuation was detected but there are no more lines]: 49
+#Error[#endif without #if]: 1
