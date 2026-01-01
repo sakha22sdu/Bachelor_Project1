@@ -1,10 +1,16 @@
-==== Topic Analysis: Refactoring / Reconfiguration ====
+==== Topic Analysis: Refactoring / Reconfiguration / AddWithMapping ====
 
-Number of matching commits: 6
-Number of messages loaded : 6
+Number of matching commits: 9
+Number of messages loaded : 9
 
-## Top 50 keywords
+## Keywords ordered by frequency
 fix                  3
+support              3
+add                  2
+missing              2
+ifdef                2
+ssh                  2
+agent                2
 build                1
 windows              1
 ifdefs               1
@@ -14,17 +20,16 @@ check                1
 libssh               1
 header               1
 poll                 1
-support              1
 channel_poll         1
 not                  1
 yet                  1
 channel_select       1
-ifdef                1
 win32                1
 bug                  1
 debian               1
 rules                1
 executable           1
+experimental         1
 
 
 ## Messages used for analysis
@@ -36,14 +41,23 @@ Fix build on Windows.
 Fix the ifdefs.
 
 --- Message 3 ---
-Cleanup the define check in the libssh header file.
+Add missing ifdef for ssh-agent support.
 
 --- Message 4 ---
-poll(2) support for channel_poll. Not yet for channel_select.
+Add missing agent files.
 
 --- Message 5 ---
-fix #ifdef win32 bug
+Cleanup the define check in the libssh header file.
 
 --- Message 6 ---
+poll(2) support for channel_poll. Not yet for channel_select.
+
+--- Message 7 ---
+fix #ifdef win32 bug
+
+--- Message 8 ---
 debian/rules en executable
+
+--- Message 9 ---
+ssh-1 experimental support
 
