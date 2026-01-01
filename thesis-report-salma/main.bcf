@@ -2344,8 +2344,28 @@
     <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">Wohlin2024_experimentationInSE</bcf:citekey>
-    <bcf:citekey order="2">Wohlin2024_experimentationInSE</bcf:citekey>
+    <bcf:citekey order="1">apel13</bcf:citekey>
+    <bcf:citekey order="2">apel13</bcf:citekey>
+    <bcf:citekey order="3">apel13</bcf:citekey>
+    <bcf:citekey order="4">DBLP:conf/icse/LiebigALKS10</bcf:citekey>
+    <bcf:citekey order="5">apel13</bcf:citekey>
+    <bcf:citekey order="6">apel13</bcf:citekey>
+    <bcf:citekey order="7">DBLP:conf/icse/LiebigALKS10</bcf:citekey>
+    <bcf:citekey order="8">apel13</bcf:citekey>
+    <bcf:citekey order="9">apel13</bcf:citekey>
+    <bcf:citekey order="10">DBLP:conf/icse/LiebigALKS10</bcf:citekey>
+    <bcf:citekey order="11">apel13</bcf:citekey>
+    <bcf:citekey order="12">apel13</bcf:citekey>
+    <bcf:citekey order="13">apel13</bcf:citekey>
+    <bcf:citekey order="14">apel13</bcf:citekey>
+    <bcf:citekey order="15">Bittner2022</bcf:citekey>
+    <bcf:citekey order="16">Bittner2022</bcf:citekey>
+    <bcf:citekey order="17">Bittner2022</bcf:citekey>
+    <bcf:citekey order="18">Wohlin2024_experimentationInSE</bcf:citekey>
+    <bcf:citekey order="19">apel13</bcf:citekey>
+    <bcf:citekey order="20">DBLP:conf/icse/LiebigALKS10</bcf:citekey>
+    <bcf:citekey order="21">Bittner2022</bcf:citekey>
+    <bcf:citekey order="22">Wohlin2024_experimentationInSE</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

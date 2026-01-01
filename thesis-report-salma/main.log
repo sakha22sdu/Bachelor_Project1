@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.2)  30 DEC 2025 20:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.2)  1 JAN 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -727,7 +727,29 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl)
+ (./main.bbl
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                Bittner2022
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                DBLP:conf/icse/LiebigALKS10
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                apel13
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+)
 Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -803,7 +825,7 @@ LaTeX Info: Redefining \nameref on input line 22.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./title/title.tex
-<title/SDU_BLACK.png, id=91, 830.10126pt x 221.82875pt>
+<title/SDU_BLACK.png, id=127, 830.10126pt x 221.82875pt>
 File: title/SDU_BLACK.png Graphic file (type png)
 <use title/SDU_BLACK.png>
 Package pdftex.def Info: title/SDU_BLACK.png  used on input line 13.
@@ -834,65 +856,148 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]) (./chapters/2_background.tex [2]
 Chapter 2.
+
+LaTeX Warning: Citation 'apel13' on page 3 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'apel13' on page 3 undefined on input line 12.
+
+
+LaTeX Warning: Citation 'apel13' on page 3 undefined on input line 14.
+
+
+LaTeX Warning: Citation 'DBLP:conf/icse/LiebigALKS10' on page 3 undefined on input line 16.
+
+
+LaTeX Warning: Citation 'apel13' on page 3 undefined on input line 16.
+
 [3
 
-] [4]
-<figures/bittner_edits_classification.png, id=153, 483.30562pt x 188.95593pt>
+]
+
+LaTeX Warning: Citation 'apel13' on page 4 undefined on input line 18.
+
+
+LaTeX Warning: Citation 'DBLP:conf/icse/LiebigALKS10' on page 4 undefined on input line 18.
+
+
+LaTeX Warning: Citation 'apel13' on page 4 undefined on input line 20.
+
+
+LaTeX Warning: Citation 'apel13' on page 4 undefined on input line 22.
+
+
+LaTeX Warning: Citation 'DBLP:conf/icse/LiebigALKS10' on page 4 undefined on input line 24.
+
+
+Overfull \hbox (22.0481pt too wide) in paragraph at lines 24--25
+\T1/cmr/m/n/10 their ef-fects are of-ten im-plicit and scat-tered across the code base'' [[]].
+ []
+
+
+LaTeX Warning: Citation 'apel13' on page 4 undefined on input line 30.
+
+
+LaTeX Warning: Citation 'apel13' on page 4 undefined on input line 32.
+
+[4]
+
+LaTeX Warning: Citation 'apel13' on page 5 undefined on input line 34.
+
+
+LaTeX Warning: Citation 'apel13' on page 5 undefined on input line 36.
+
+
+LaTeX Warning: Citation 'Bittner2022' on page 5 undefined on input line 41.
+
+
+LaTeX Warning: Citation 'Bittner2022' on page 5 undefined on input line 43.
+
+<figures/bittner_edits_classification.png, id=201, 483.30562pt x 188.95593pt>
 File: figures/bittner_edits_classification.png Graphic file (type png)
 <use figures/bittner_edits_classification.png>
-Package pdftex.def Info: figures/bittner_edits_classification.png  used on input line 51.
+Package pdftex.def Info: figures/bittner_edits_classification.png  used on input line 49.
 (pdftex.def)             Requested size: 381.62608pt x 149.20723pt.
- [5 <./figures/bittner_edits_classification.png>]
-Overfull \hbox (2.68108pt too wide) in paragraph at lines 58--59
+
+Overfull \hbox (2.68108pt too wide) in paragraph at lines 56--57
 []\T1/cmr/m/n/10 The clas-si-fi-ca-tion de-fines eight fun-da-men-tal edit cat-e-gories. Ad-di-tive ed-its in-clude \T1/cmr/bx/n/10 Ad-dWithMap-
  []
 
-) (./chapters/3_implementation.tex [6] [7]
+[5]
+
+LaTeX Warning: Citation 'Bittner2022' on page 6 undefined on input line 60.
+
+[6 <./figures/bittner_edits_classification.png>]) (./chapters/3_implementation.tex [7]
 Chapter 3.
 [8
 
-]) (./chapters/4_evaluation.tex [9]
+] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) [9] [10]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 77.
+
+Overfull \hbox (2.89166pt too wide) in paragraph at lines 93--94
+[]\T1/cmr/m/n/10 The ini-tial-i-sa-tion of the anal-y-sis is per-formed in the \T1/cmtt/m/n/10 initializeResults \T1/cmr/m/n/10 method of the \T1/cmtt/m/n/10 MyAnalysis
+ []
+
+
+Overfull \hbox (34.41174pt too wide) in paragraph at lines 95--96
+[]\T1/cmr/m/n/10 During ini-tial-i-sa-tion, two out-put files are cre-ated: \T1/cmtt/m/n/10 commit_analysis_log.txt \T1/cmr/m/n/10 and \T1/cmtt/m/n/10 commit_messages.txt\T1/cmr/m/n/10 .
+ []
+
+[11]
+Overfull \hbox (26.13756pt too wide) in paragraph at lines 141--142
+[]\T1/cmr/m/n/10 Commits clas-si-fied as \T1/cmr/m/it/10 Refac-tor-ing \T1/cmr/m/n/10 or \T1/cmr/m/it/10 Re-con-fig-u-ra-tion \T1/cmr/m/n/10 are se-lected by pars-ing \T1/cmtt/m/n/10 commit_analysis_log.txt\T1/cmr/m/n/10 .
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+Underfull \vbox (badness 2368) has occurred while \output is active []
+
+ [12]) (./chapters/4_evaluation.tex [13]
 Chapter 4.
-) (./chapters/5_conclusion.tex [10
+) (./chapters/5_conclusion.tex [14
 
 ]
 Chapter 5.
-) [11
+) [15
 
 ] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [12
+ [16
 
 ] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [13
+ [17
 
-] [14
+] [18
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: E6A02C26D432E7A27689A64571B7C73A;3178.
+(rerunfilecheck)             Checksum: 4A0D045F1BDB2F1B4B26FA9E9DD3E0FC;4499.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29383 strings out of 478287
- 554940 string characters out of 5849290
- 1226125 words of memory out of 5000000
- 47078 multiletter control sequences out of 15000+600000
- 480643 words of font info for 44 fonts, out of 8000000 for 9000
+ 30005 strings out of 478287
+ 561467 string characters out of 5849290
+ 1280958 words of memory out of 5000000
+ 47627 multiletter control sequences out of 15000+600000
+ 482487 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,12n,123p,1030b,1341s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfbl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (16 pages, 319047 bytes).
+ 122i,12n,123p,1216b,1520s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfbl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on main.pdf (20 pages, 412951 bytes).
 PDF statistics:
- 282 PDF objects out of 1000 (max. 8388607)
- 229 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 191 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 418 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
