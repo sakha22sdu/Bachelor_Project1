@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
-    \entry{apel13}{book}{}
+    \entry{apel2013_featureOrientedSoftwareProductLines}{book}{}
       \name{author}{4}{}{%
         {{hash=a4f57072771b98df56b8f8205f384d00}{%
            family={Apel},
@@ -62,98 +62,63 @@
       \verb 10.1007/978-3-642-37521-7
       \endverb
     \endentry
-    \entry{Bittner2022}{article}{}
-      \name{author}{4}{}{%
-        {{hash=68dfea37be5e9798f2652f10dc4a69af}{%
+    \entry{Bittner2022_edits}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=badde269026fec0c6e5a2d81a0fe3b68}{%
            family={Bittner},
            familyi={B\bibinitperiod},
-           given={Peter},
-           giveni={P\bibinitperiod}}}%
-        {{hash=451b3ceb6d62afdcd1df7bf792745509}{%
-           family={Berger},
-           familyi={B\bibinitperiod},
-           given={Thorsten},
-           giveni={T\bibinitperiod}}}%
-        {{hash=fe3ffff2de1216320c4ec62d28481c25}{%
-           family={Linsbauer},
-           familyi={L\bibinitperiod},
-           given={Andrés},
-           giveni={A\bibinitperiod}}}%
-        {{hash=f10811c0fe4668c1f71e14016c11f4bf}{%
-           family={Grünbacher},
-           familyi={G\bibinitperiod},
-           given={Paul},
-           giveni={P\bibinitperiod}}}%
-      }
-      \strng{namehash}{46e15cb6b261101a18ba72b1429c04a2}
-      \strng{fullhash}{f3ed5b58da9ab16dd41555abdec151b7}
-      \strng{bibnamehash}{46e15cb6b261101a18ba72b1429c04a2}
-      \strng{authorbibnamehash}{46e15cb6b261101a18ba72b1429c04a2}
-      \strng{authornamehash}{46e15cb6b261101a18ba72b1429c04a2}
-      \strng{authorfullhash}{f3ed5b58da9ab16dd41555abdec151b7}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Transactions on Software Engineering}
-      \field{number}{11}
-      \field{title}{A Classification of Variability Edits in Source Code}
-      \field{volume}{48}
-      \field{year}{2022}
-      \field{pages}{4420\bibrangedash 4441}
-      \range{pages}{22}
-      \verb{doi}
-      \verb 10.1109/TSE.2021.3126330
-      \endverb
-    \endentry
-    \entry{DBLP:conf/icse/LiebigALKS10}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=45caedd921244c9a9e646acb02d58519}{%
-           family={Liebig},
-           familyi={L\bibinitperiod},
-           given={Jörg},
-           giveni={J\bibinitperiod}}}%
-        {{hash=a4f57072771b98df56b8f8205f384d00}{%
-           family={Apel},
-           familyi={A\bibinitperiod},
-           given={Sven},
-           giveni={S\bibinitperiod}}}%
-        {{hash=a541d0e1e3a14a2526ca1371a7a44339}{%
-           family={Lengauer},
-           familyi={L\bibinitperiod},
-           given={Christian},
+           given={Paul\bibnamedelima Maximilian},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=3e7722b45834b004393e094b03b46018}{%
+           family={Tinnes},
+           familyi={T\bibinitperiod},
+           given={Christof},
            giveni={C\bibinitperiod}}}%
-        {{hash=f0fe27e2b5f525a3b4c50ce35e1a7cee}{%
-           family={Kästner},
-           familyi={K\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-        {{hash=2a5ae6c3a7deb62e4508c393839b89cc}{%
-           family={Saake},
+        {{hash=cb68230073da45449d90e3e2326e0582}{%
+           family={Schultheiß},
            familyi={S\bibinitperiod},
-           given={Gunter},
-           giveni={G\bibinitperiod}}}%
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b9cdfd5d07435c8c6ac20af227339fde}{%
+           family={Viegener},
+           familyi={V\bibinitperiod},
+           given={Sören},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d79290f008da09d20408215ad85245d3}{%
+           family={Kehrer},
+           familyi={K\bibinitperiod},
+           given={Timo},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d37a977a0f05c75ccc2786607cead2dd}{%
+           family={Thüm},
+           familyi={T\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Singapore, Singapore}%
       }
       \list{publisher}{1}{%
         {ACM}%
       }
-      \strng{namehash}{5e55f58b11d833c227d01a94b7244bb5}
-      \strng{fullhash}{88623e007d47d146fcac5292a0b87a4a}
-      \strng{bibnamehash}{5e55f58b11d833c227d01a94b7244bb5}
-      \strng{authorbibnamehash}{5e55f58b11d833c227d01a94b7244bb5}
-      \strng{authornamehash}{5e55f58b11d833c227d01a94b7244bb5}
-      \strng{authorfullhash}{88623e007d47d146fcac5292a0b87a4a}
-      \field{sortinit}{L}
-      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \strng{namehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{fullhash}{301150411e85d47ff7f32d70d88661db}
+      \strng{bibnamehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{authorbibnamehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{authornamehash}{6eab2887a73b217dbfe9b411b32900bd}
+      \strng{authorfullhash}{301150411e85d47ff7f32d70d88661db}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 32nd International Conference on Software Engineering (ICSE)}
-      \field{title}{An Analysis of the Variability in Forty Preprocessor-Based Software Product Lines}
-      \field{year}{2010}
-      \field{pages}{105\bibrangedash 114}
-      \range{pages}{10}
+      \field{booktitle}{Proceedings of the 30th ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}
+      \field{series}{ESEC/FSE 2022}
+      \field{title}{Classifying edits to variability in source code}
+      \field{year}{2022}
+      \field{pages}{196\bibrangedash 208}
+      \range{pages}{13}
       \verb{doi}
-      \verb 10.1145/1806799.1806815
+      \verb 10.1145/3540250.3549108
       \endverb
     \endentry
     \entry{Wohlin2024_experimentationInSE}{book}{}

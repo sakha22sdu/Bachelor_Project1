@@ -1,12 +1,9 @@
 \chapter{Implementation}
 \label{chp:implementation}
-
-This chapter describes the implementation of the analysis conducted in this bachelor thesis. It introduces the technical prerequisites of the implementation, outlines the supported language structures and tools, and presents the architecture of the analysis built on top of DiffDetective. The chapter further explains the specific design choices made for the custom analysis and discusses how the correctness of the implementation is ensured.
-
 \section{Preliminaries}
 % what language structures do you support?
 % what tools/libraries help you to achieve your implementation?
-This section describes the technical scope of the implementation and the tools used to realise the analysis.
+This chapter describes the implementation of the analysis conducted in this bachelor thesis. It introduces the technical prerequisites of the implementation, outlines the supported language structures and tools and presents the architecture of the analysis built on top of DiffDetective. The chapter further explains the specific design choices made for the custom analysis and discusses how the correctness of the implementation is ensured.
 
 \subsection{Supported Language Structure}
 
@@ -29,7 +26,7 @@ DiffDetective is a variability-aware differencing Java library designed to analy
 
 DiffDetective parses annotated source code and represents the association between code fragments and their corresponding presence conditions. When comparing two revisions of a source file, the framework detects differences in these associations, allowing variability-related edits to be identified even when the underlying code remains unchanged.
 
-A central feature of DiffDetective is its ability to classify edits according to their semantic impact on variability. Based on the formal edit classification proposed by Bittner et al.~\cite{Bittner2022}, DiffDetective distinguishes between different classes of variability-related edits, including refactoring, reconfiguration, generalisation, and specialisation. This classification provides a precise vocabulary for describing how presence conditions evolve across commits.
+A central feature of DiffDetective is its ability to classify edits according to their semantic impact on variability. Based on the formal edit classification proposed by Bittner et al.~\cite{Bittner2022_edits}, DiffDetective distinguishes between different classes of variability-related edits, including refactoring, reconfiguration, generalisation, and specialisation. This classification provides a precise vocabulary for describing how presence conditions evolve across commits.
 
 In this thesis, DiffDetective serves as the foundation for identifying and classifying edits to presence conditions. The framework provides the core analysis capabilities, while the custom analysis component builds on its results to extract relevant metadata and prepare the data for further evaluation and topic-based analysis of commit messages.
 
@@ -42,13 +39,7 @@ In this thesis, DiffDetective serves as the foundation for identifying and class
 
 The execution of the analysis starts in the Java component and proceeds in a sequential manner. The entry point of the implementation is the class \texttt{Main.java}, which is responsible for configuring the analysis and connecting it to DiffDetective’s execution infrastructure. \texttt{Main.java} defines the repository location and output directory and executes DiffDetective’s traversal over individual commits. Importantly, this class does not implement analysis logic itself; instead, it delegates execution to DiffDetective, which ensures that the repository history is traversed consistently and reproducibly.
 
-\begin{lstlisting}[language=Java, caption={Entry point and configuration in \texttt{Main.java}}, label={lst:main}]
-Path repoPath = Paths.get("repositories/postgresql");
-Path outputDir = Paths.get("output");
 
-Repository repo = Repository.fromDirectory(repoPath, repoPath.getFileName().toString());
-Analysis.forEachCommit(() -> MyAnalysis.Create(repo, outputDir));
-\end{lstlisting}
 
 For each pair of successive commits, DiffDetective computes a variability-aware diff that captures changes to annotated source code, including the association between code fragments and their presence conditions. These diffs are represented internally using structured models rather than plain text. The custom analysis, \texttt{MyAnalysis}, is executed within this traversal and receives access to both the current commit and the corresponding variability-aware diff.
 

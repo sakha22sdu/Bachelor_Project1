@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.2)  2 JAN 2026 00:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.2)  26 FEB 2026 14:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -665,18 +665,63 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen263
 \Gm@layoutvoffset=\dimen264
 \Gm@dimlist=\toks34
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2022/01/07 version 5.0.2 text color boxes
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2020-07-07 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks35
+\verbatim@line=\toks36
+\verbatim@in@stream=\read4
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+ (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks37
+)
+\tcb@titlebox=\box64
+\tcb@upperbox=\box65
+\tcb@lowerbox=\box66
+\tcb@phantombox=\box67
+\c@tcbbreakpart=\count434
+\c@tcblayer=\count435
+\c@tcolorbox@number=\count436
+\tcb@temp=\box68
+\tcb@temp=\box69
+\tcb@temp=\box70
+\tcb@temp=\box71
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '5.0.2'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '5.0.2'
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '5.0.2'
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+))
+\c@tcblisting=\count437
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '5.0.2'
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdfcol.sty
+Package: pdfcol 2019/12/29 v1.6 Handle new color stacks for pdfTeX (HO)
+)
+Package pdfcol Info: New color stack `tcb@breakable' = 1 on input line 23.
+\tcb@testbox=\box72
+\tcb@totalupperbox=\box73
+\tcb@totallowerbox=\box74
 ))
 
 LaTeX Warning: \include should only be used after \begin{document} on input line 11.
 
 (./formatting.tex (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box64
+\ttl@box=\box75
 \beforetitleunit=\skip85
 \aftertitleunit=\skip86
 \ttl@plus=\dimen265
 \ttl@minus=\dimen266
-\ttl@toksa=\toks35
+\ttl@toksa=\toks38
 \titlewidth=\dimen267
 \titlewidthlast=\dimen268
 \titlewidthfirst=\dimen269
@@ -687,8 +732,8 @@ Package: subfiles 2020/11/14 v2.2 Multi-file projects (package)
  (/usr/share/texlive/texmf-dist/tex/latex/import/import.sty
 Package: import 2020/04/01  v 6.2
 ))
-\@quotelevel=\count434
-\@quotereset=\count435
+\@quotelevel=\count438
+\@quotereset=\count439
 
 
 LaTeX Warning: Unused global option(s):
@@ -740,24 +785,24 @@ Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count436
+\scratchcounter=\count440
 \scratchdimen=\dimen270
-\scratchbox=\box65
-\nofMPsegments=\count437
-\nofMParguments=\count438
-\everyMPshowfont=\toks36
-\MPscratchCnt=\count439
+\scratchbox=\box76
+\nofMPsegments=\count441
+\nofMParguments=\count442
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count443
 \MPscratchDim=\dimen271
-\MPnumerator=\count440
-\makeMPintoPDFobject=\count441
-\everyMPtoPDFconversion=\toks37
+\MPnumerator=\count444
+\makeMPintoPDFobject=\count445
+\everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count442
+\c@lstlisting=\count446
 Package hyperref Info: Link coloring ON on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -766,7 +811,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count443
+\c@section@level=\count447
 )
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
@@ -845,54 +890,43 @@ Chapter 2.
 [3
 
 ] [4]
-<figures/bittner_edits_classification.png, id=244, 483.30562pt x 188.95593pt>
+<figures/bittner_edits_classification.png, id=239, 483.30562pt x 188.95593pt>
 File: figures/bittner_edits_classification.png Graphic file (type png)
 <use figures/bittner_edits_classification.png>
-Package pdftex.def Info: figures/bittner_edits_classification.png  used on input line 49.
+Package pdftex.def Info: figures/bittner_edits_classification.png  used on input line 53.
 (pdftex.def)             Requested size: 381.62608pt x 149.20723pt.
-
-Overfull \hbox (2.68108pt too wide) in paragraph at lines 56--57
-[]\T1/cmr/m/n/10 The clas-si-fi-ca-tion de-fines eight fun-da-men-tal edit cat-e-gories. Ad-di-tive ed-its in-clude \T1/cmr/bx/n/10 Ad-dWithMap-
- []
-
-[5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./figures/bittner_edits_classification.png>]) (./chapters/3_implementation.tex [7]
+ [5 <./figures/bittner_edits_classification.png>] [6]) (./chapters/3_implementation.tex [7]
 Chapter 3.
 [8
 
-] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+] [9] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [9] [10]
+)
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 81.
-
-Overfull \hbox (2.89166pt too wide) in paragraph at lines 107--108
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 72.
+ [10]
+Overfull \hbox (2.89166pt too wide) in paragraph at lines 98--99
 []\T1/cmr/m/n/10 The ini-tial-i-sa-tion of the anal-y-sis is per-formed in the \T1/cmtt/m/n/10 initializeResults \T1/cmr/m/n/10 method of the \T1/cmtt/m/n/10 MyAnalysis
  []
 
 
-Overfull \hbox (34.41174pt too wide) in paragraph at lines 109--110
+Overfull \hbox (34.41174pt too wide) in paragraph at lines 100--101
 []\T1/cmr/m/n/10 During ini-tial-i-sa-tion, two out-put files are cre-ated: \T1/cmtt/m/n/10 commit_analysis_log.txt \T1/cmr/m/n/10 and \T1/cmtt/m/n/10 commit_messages.txt\T1/cmr/m/n/10 .
  []
 
-
-Underfull \vbox (badness 1377) has occurred while \output is active []
-
- [11]
-Overfull \hbox (21.11844pt too wide) in paragraph at lines 133--134
+[11]
+Overfull \hbox (21.11844pt too wide) in paragraph at lines 124--125
 [][][][][][][][][][][] 
  []
 
 [12]
-Overfull \hbox (26.13756pt too wide) in paragraph at lines 174--175
+Overfull \hbox (26.13756pt too wide) in paragraph at lines 165--166
 []\T1/cmr/m/n/10 Commits clas-si-fied as \T1/cmr/m/it/10 Refac-tor-ing \T1/cmr/m/n/10 or \T1/cmr/m/it/10 Re-con-fig-u-ra-tion \T1/cmr/m/n/10 are se-lected by pars-ing \T1/cmtt/m/n/10 commit_analysis_log.txt\T1/cmr/m/n/10 .
  []
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [13]) (./chapters/4_evaluation.tex [14]
+)) (./chapters/4_evaluation.tex [13]
 Chapter 4.
 
 Overfull \hbox (15.1109pt too wide) in paragraph at lines 5--7
@@ -900,12 +934,12 @@ Overfull \hbox (15.1109pt too wide) in paragraph at lines 5--7
  []
 
 
-LaTeX Warning: Citation 'selfAdmittedIssues2023' on page 15 undefined on input line 10.
+LaTeX Warning: Citation 'selfAdmittedIssues2023' on page 14 undefined on input line 10.
 
 
-LaTeX Warning: Citation 'selfAdmittedIssues2023' on page 15 undefined on input line 12.
+LaTeX Warning: Citation 'selfAdmittedIssues2023' on page 14 undefined on input line 12.
 
-[15
+[14
 
 ]
 Overfull \hbox (3.92378pt too wide) in paragraph at lines 86--87
@@ -920,26 +954,26 @@ Overfull \hbox (3.92378pt too wide) in paragraph at lines 105--106
 
 Underfull \vbox (badness 5133) has occurred while \output is active []
 
- [16]
+ [15]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [17] [18] [19] [20]) (./chapters/5_conclusion.tex [21]
+ [16] [17] [18] [19]) (./chapters/5_conclusion.tex [20]
 Chapter 5.
-) [22
+) [21
 
 ] (./main.lof)
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [23
+ [22
 
 ] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [24
+ [23
 
-] [25
+] [24
 
 ] (./main.aux)
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -949,18 +983,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 30156 strings out of 478287
- 563879 string characters out of 5849290
- 1328754 words of memory out of 5000000
- 47696 multiletter control sequences out of 15000+600000
+ 32505 strings out of 478287
+ 626568 string characters out of 5849290
+ 1356904 words of memory out of 5000000
+ 50020 multiletter control sequences out of 15000+600000
  482802 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,12n,123p,1216b,1520s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 122i,12n,123p,1188b,2172s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texmf/fonts/type1/public/cm-super/sfbl1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfit0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on main.pdf (27 pages, 496247 bytes).
+Output written on main.pdf (26 pages, 493480 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 529 compressed objects within 6 object streams
- 189 named destinations out of 1000 (max. 500000)
+ 585 PDF objects out of 1000 (max. 8388607)
+ 511 compressed objects within 6 object streams
+ 181 named destinations out of 1000 (max. 500000)
  303 words of extra memory for PDF output out of 10000 (max. 10000000)
 
