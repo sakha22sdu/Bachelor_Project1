@@ -17,19 +17,27 @@
 	footskip=1.5cm
 ]{geometry}
 
+% For Listing 
 \usepackage{listings}
 \usepackage{xcolor}
 
-\usepackage{tcolorbox}
-\tcbuselibrary{listings,breakable}
-
-\lstset{
+\lstdefinestyle{mypicturestyle}{
+  language=Java,
   basicstyle=\ttfamily\small,
-  breaklines=true,
-  breakatwhitespace=true,
-  frame=single,
   numbers=left,
-  numberstyle=\tiny,
+  numberstyle=\tiny\color{gray},
+  stepnumber=1,
+  numbersep=10pt,
+  frame=single,
+  rulecolor=\color{black},
+  frameround=tttt,
+  xleftmargin=1.2em,
+  framexleftmargin=1.2em,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=4,
   captionpos=b,
-  showstringspaces=false
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!50!black},
+  stringstyle=\color{orange!70!black}
 }

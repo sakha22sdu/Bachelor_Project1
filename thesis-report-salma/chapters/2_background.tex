@@ -79,13 +79,5 @@ Despite its usefulness, NLP has inherent limitations, as it can only operate on 
 \subsection{Topic Modelling}
 While DiffDetective identifies how presence conditions change at the source-code level, topic modelling is used to analyse commit messages in order to understand the contexts and intentions under which these changes were made. Topic modelling is an unsupervised NLP technique that discovers underlying thematic structures in a collection of documents.
 
-One of the most widely used topic modelling techniques is \textbf{Latent Dirichlet Allocation (LDA)}, a probabilistic generative model that represents documents as mixtures of topics. In this thesis, topic modelling is applied to commit messages associated with edits to presence conditions identified by \textbf{DiffDetective} and \texttt{MyAnalysis}. Each commit message is treated as a document, and the resulting topics capture recurring themes in developer communication related to variability changes, such as bug fixing, cleanup of conditional compilation directives or refactoring and reconfiguration edits to presence conditions.
+Commit messages are very short texts, where topic models like Latent Dirichlet Allocation (LDA) often struggle. Therefore, this thesis uses keyword frequency analysis as a lightweight alternative. The analysis is applied to commit messages associated with edits to presence conditions identified by DiffDetective and MyAnalysis. Each commit message is treated as a short document and represented using tokenization and normalization (e.g., removal of non-alphabetic characters). After filtering stopwords and very short tokens, term frequencies are computed, and the most frequent keywords provide an interpretable approximation of recurring themes related to variability changes. This is such as bug fixing, cleanup of conditional compilation directives or refactoring and reconfiguration edits to presence conditions.
 
-@article{blei2003lda,
-  author  = {David M. Blei and Andrew Y. Ng and Michael I. Jordan},
-  title   = {Latent Dirichlet Allocation},
-  journal = {Journal of Machine Learning Research},
-  volume  = {3},
-  year    = {2003},
-  pages   = {993--1022}
-}

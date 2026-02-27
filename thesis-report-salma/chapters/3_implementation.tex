@@ -37,27 +37,39 @@ In this thesis, DiffDetective serves as the foundation for identifying and class
 
 \subsection{Overall Structure}
 
-The execution of the analysis starts in the Java component and proceeds in a sequential manner. The entry point of the implementation is the class \texttt{Main.java}, which is responsible for configuring the analysis and connecting it to DiffDetective’s execution infrastructure. \texttt{Main.java} defines the repository location and output directory and executes DiffDetective’s traversal over individual commits. Importantly, this class does not implement analysis logic itself; instead, it delegates execution to DiffDetective, which ensures that the repository history is traversed consistently and reproducibly.
+The execution of the analysis starts in the Java component and proceeds in a sequential manner. The entry point of the implementation is the class \texttt{Main.java}, which is responsible for configuring the analysis and connecting it to DiffDetective’s execution infrastructure  (see Listing~\ref{lst:myanalysis-main}). \texttt{Main.java} defines the repository location and output directory and executes DiffDetective’s traversal over individual commits. Importantly, this class does not implement analysis logic itself. Instead, it delegates execution to DiffDetective, which ensures that the repository history is traversed consistently and reproducibly (Listing~\ref{lst:myanalysis-main}).
+\clearpage
 
+\begin{lstlisting}[style=mypicturestyle, caption={MyAnalysis runner (main method)}, label={lst:myanalysis-main}]
+public static void main(String[] args) {
+    Path repoPath = Paths.get("repositories/gimp");
+    Path outputDir = Paths.get("output");
 
+    System.out.println("Running MyAnalysis on gimp...");
+
+    Repository repo = Repository.fromDirectory(repoPath, repoPath.getFileName().toString());
+
+    Analysis.forEachCommit(() -> MyAnalysis.Create(repo, outputDir));
+}
+\end{lstlisting}
 
 For each pair of successive commits, DiffDetective computes a variability-aware diff that captures changes to annotated source code, including the association between code fragments and their presence conditions. These diffs are represented internally using structured models rather than plain text. The custom analysis, \texttt{MyAnalysis}, is executed within this traversal and receives access to both the current commit and the corresponding variability-aware diff.
 
-Architecturally, this design cleanly separates control flow from analysis. Repository traversal, parsing of annotated source code, and computation of variability-aware diffs are handled entirely by DiffDetective. The custom implementation only observes and processes the results of these computations. This separation reduces complexity and ensures that the custom analysis remains focused on the specific goals of the bachelor thesis.
+Architecturally, this design cleanly separates control flow from analysis. Repository traversal, parsing of annotated source code, and computation of variability-aware diffs are handled entirely by DiffDetective. The MyAnalysis implementation only observes and processes the results of these computations. This separation reduces complexity and ensures that MyAnalysis remains focused on the specific goals of the bachelor thesis.
 
 Lastly, a topic analysis is applied to structure the extracted results. This analysis groups related observations and supports the identification of recurring patterns in the evolution of variability across commits.
 
 \subsection{Specific Design Choices}
 
-A key characteristic of the implementation is that it builds a custom, commit-level analysis on top of an existing variability-aware differencing infrastructure, rather than reimplementing repository traversal or differencing logic. By leveraging DiffDetective for commit traversal, parsing of annotated source code, and computation of variability-aware diffs, the implementation focuses exclusively on analysing and interpreting the resulting data.
+A key characteristic of the implementation is that it builds a custom, commit-level analysis on top of an existing variability-aware differencing infrastructure, rather than reimplementing repository traversal or differencing logic. By leveraging DiffDetective for commit traversal, parsing of annotated source code and computation of variability-aware diffs, the implementation focuses exclusively on analysing and interpreting the resulting data.
 
-Another specific aspect is that the analysis operates directly on real-world repositories with publicly available version control histories, without requiring preprocessing or manual annotations beyond those already present in the code base. The analysis is executed sequentially per commit, which enables fine-grained reasoning about how variability and presence conditions evolve over time.
+Another specific aspect is that the analysis operates directly on real-world repositories with publicly available version control histories, without requiring preprocessing or manual annotations beyond those already present in the code base. The analysis is executed sequentially per commit, which enables precise reasoning about how variability and presence conditions evolve over time.
 
 Finally, the integration of a topic analysis step distinguishes the implementation by supporting higher-level interpretation of the extracted results. Rather than producing only raw diffs, the implementation structures observations into recurring themes, which makes it easier to evaluate how variability evolves over time.
 
 \section{MyAnalysis}
 
-MyAnalysis constitutes the custom analysis component of the implementation and is responsible for interpreting the variability-aware diffs computed by DiffDetective. Rather than performing repository traversal or syntactic differencing itself, MyAnalysis is integrated into DiffDetective’s execution pipeline and operates exclusively on the intermediate results produced during commit traversal.
+MyAnalysis constitutes the custom analysis component of the implementation and is responsible for interpreting the variability-aware diffs computed by DiffDetective. Rather than performing repository traversal or syntactic differencing itself, MyAnalysis is integrated into DiffDetective’s execution pipeline and operates exclusively on the intermediate results produced during commit traversal. MyAnalysis leverages DiffDetective’s integrated edit-class logic inspired by Bittner et al.~\cite{Bittner2022_edits}, to lift variability-aware changes to categories like Refactoring and Reconfiguration. This makes the output interpretable and useful for analysis.
 
 The analysis is implemented by conforming to the \texttt{Analysis.Hooks} interface provided by DiffDetective. This interface defines a set of lifecycle methods that are invoked at specific points during commit traversal. An instance of MyAnalysis is registered through a factory method, which constructs an \texttt{Analysis} object and attaches MyAnalysis as an analysis hook. Once registered, MyAnalysis is executed automatically for each commit processed by DiffDetective.
 
@@ -65,47 +77,50 @@ During execution, DiffDetective iterates over the commit history of the analysed
 
 \subsection{Initialisation}
 
-\begin{lstlisting}[language=Java,
-caption={Initialisation of analysis output in \texttt{MyAnalysis}},
-label={lst:init}]
-@Override
-public void initializeResults(Analysis analysis) {
-    // Ensure that the output directory exists
-    Files.createDirectories(outputDirectory);
-
-    // Prepare analysis log file
-    Path analysisFile = Paths.get(
-        System.getProperty("user.dir"),
-        "commit_analysis_log.txt"
-    );
-    Files.deleteIfExists(analysisFile);
-    Files.createFile(analysisFile);
-
-    // Writer for structured per-commit analysis results
-    analysisWriter = new BufferedWriter(
-        new FileWriter(analysisFile.toFile(), true)
-    );
-
-    ...
-
-    // Reset internal state to avoid duplicate output
-    writtenCommits.clear();
-
-    ...
-}
-\end{lstlisting}
-
 The initialisation of the analysis is performed in the \texttt{initializeResults} method of the \texttt{MyAnalysis} class, as illustrated in Listing~\ref{lst:init}. This method prepares the output environment before commit traversal begins by ensuring that the output directory exists and by resetting previously generated result files to guarantee reproducibility across multiple executions.
 
 During initialisation, two output files are created: \texttt{commit\_analysis\_log.txt} and \texttt{commit\_messages.txt}. The former stores a compact, structured summary of the analysis results for each commit, including commit identifiers and classification information. The latter stores the raw commit messages associated with each analysed commit. Separating these outputs allows structured data to be processed automatically while preserving commit messages for later manual inspection or qualitative analysis.
 
 To prevent duplicate output, the \texttt{MyAnalysis} class maintains a set of commit identifiers that have already been processed. Before writing results for a commit, the analysis checks whether the corresponding identifier has already been recorded.
 
+
+\clearpage
+
+\begin{lstlisting}[style=mypicturestyle, caption={Initialization of output files in \texttt{MyAnalysis.initializeResults}}, label={lst:init}]
+@Override
+public void initializeResults(Analysis analysis) {
+    try {
+        Files.createDirectories(outputDirectory);
+
+        // Clean old logs
+        Path analysisFile = Paths.get(System.getProperty("user.dir"), "commit_analysis_log.txt");
+        Files.deleteIfExists(analysisFile);
+        Files.createFile(analysisFile);
+        analysisWriter = new BufferedWriter(new FileWriter(analysisFile.toFile(), true));
+        analysisWriter.write("==== Commit Analysis Log ====\n\n");
+
+        // Clean old commit messages
+        Path messageFile = Paths.get(System.getProperty("user.dir"), "commit_messages.txt");
+        Files.deleteIfExists(messageFile);
+        Files.createFile(messageFile);
+        messageWriter = new BufferedWriter(new FileWriter(messageFile.toFile(), true));
+        messageWriter.write("==== Commit Messages ====\n\n");
+
+        writtenCommits.clear();
+
+        Logger.info("Initialized output files: {}, {}", analysisFile, messageFile);
+
+    } catch (IOException e) {
+        Logger.error("Failed to initialize log files: {}", e.getMessage());
+    }
+}
+\end{lstlisting}
+
 \subsection{Classification}
 
-The classification of variability-related changes is implemented in the \texttt{classifyDiff} method of the \texttt{MyAnalysis} class. This method operates on the variability-aware diff computed by DiffDetective and iterates over the artifact nodes contained in the diff structure.
+The classification of variability-related changes is implemented in the \texttt{classifyDiff} method of the \texttt{MyAnalysis} class (see Listing~\ref{lst:classify}). This method operates on the variability-aware diff computed by DiffDetective and iterates over the artifact nodes contained in the diff structure.
 
-\begin{lstlisting}[language=Java, caption={Classification of variability-aware edits in \texttt{MyAnalysis}}, label={lst:classify}]
+\begin{lstlisting}[style=mypicturestyle, caption={Classification of variability-aware edits in \texttt{MyAnalysis}}, label={lst:classify}]
 private EditClass classifyDiff(VariationDiff<?> diff) {
     // Stores the last applicable edit class encountered
     EditClass editClass = null;
@@ -140,7 +155,7 @@ For each artifact node, the method applies DiffDetective’s proposed edit-class
 
 In addition to structural change classification, MyAnalysis analyses commit messages to identify commits that are likely related to bug fixing. This logic is implemented using a lightweight keyword-based heuristic.
 
-\begin{lstlisting}[language=Java, caption={Heuristic for detecting bug-related commits}, label={lst:bug}]
+\begin{lstlisting}[style=mypicturestyle, caption={Heuristic for detecting bug-related commits}, label={lst:bug}]
 private boolean isBugRelated(String message) {
     if (message == null) return false;
     String lower = message.toLowerCase();
@@ -164,7 +179,7 @@ The topic analysis consumes the files \texttt{commit\_analysis\_log.txt} and \te
 
 Commits classified as \emph{Refactoring} or \emph{Reconfiguration} are selected by parsing \texttt{commit\_analysis\_log.txt}. Only the commit messages corresponding to these identifiers are included in the subsequent analysis.
 
-\begin{lstlisting}[language=Python, caption={Selecting refactoring and reconfiguration commits from the analysis log}, label={lst:select}]
+\begin{lstlisting}[style=mypicturestyle, caption={Selecting refactoring and reconfiguration commits from the analysis log}, label={lst:select}]
 refac_types = {"Refactoring", "Reconfiguration"}
 if ctype in refac_types:
     interesting_ids.add(cid)
@@ -174,7 +189,7 @@ if ctype in refac_types:
 
 To approximate topics, a keyword frequency analysis is performed over the selected commit messages. Messages are tokenised into lowercase words using a regular-expression-based tokenizer. Common stopwords and noise terms are removed, and very short tokens are excluded. The remaining words are counted to produce a ranked list of frequently occurring keywords.
 
-\begin{lstlisting}[language=Python, caption={Keyword frequency analysis over selected commit messages}, label={lst:keywords}]
+\begin{lstlisting}[style=mypicturestyle, caption={Keyword frequency analysis over selected commit messages}, label={lst:keywords}]
 text = re.sub(r'[^a-zA-Z\s]', '', text).lower()
 words = [w for w in text.split() if len(w) > 2]
 counter = Counter(words)
