@@ -7,9 +7,9 @@ As an initial subject system, the repository \texttt{xterm} was selected. The an
 
 Each subject system was cloned locally and analysed using \texttt{DiffDetective} in combination with the custom analysis component \texttt{MyAnalysis}. The repositories were provided to DiffDetective as input and processed commit by commit. For each pair of successive commits, DiffDetective computed a variability-aware diff, capturing changes to annotated source code together with their associated presence conditions. \texttt{MyAnalysis} was executed as part of this traversal and recorded commit-level metadata and classification results.
 
-The evaluation focuses on measuring variability-related changes at commit level. For each analysed commit, the implementation records the assigned variability edit class, as provided by DiffDetective, and whether the commit message indicates a potential bug fix based on a keyword-based heuristic. These measurements support both quantitative analysis, such as counting the frequency of different edit classes, and qualitative analysis, such as inspecting individual commit messages and corresponding code changes \cite{selfAdmittedIssues2023}.
+The evaluation focuses on measuring variability-related changes at commit level. For each analysed commit, the implementation records the assigned variability edit class, as provided by DiffDetective, and whether the commit message indicates a potential bug fix based on a keyword-based heuristic. These measurements support both quantitative analysis, such as counting the frequency of different edit classes, and qualitative analysis, such as inspecting individual commit messages and corresponding code changes.
 
-To support higher-level interpretation of the results, a topic analysis was applied as a post-processing step. The topic analysis focuses specifically on commits classified as \emph{Refactoring} or \emph{Reconfiguration}, as these represent higher-level changes to variability. A lightweight keyword-frequency approach was used to analyse the commit messages associated with these commits, allowing recurring terms and themes to be identified without relying on complex semantic models \cite{selfAdmittedIssues2023}.
+To support higher-level interpretation of the results, a topic analysis was applied as a post-processing step. The topic analysis focuses specifically on commits classified as \emph{Refactoring} or \emph{Reconfiguration}, as these represent higher-level changes to variability. A lightweight keyword-frequency approach was used to analyse the commit messages associated with these commits, allowing recurring terms and themes to be identified without relying on complex semantic models.
 
 \section{Results}
 % What were the results
@@ -21,48 +21,13 @@ The results are reported both quantitatively and qualitatively, focusing on
 In addition, selected commits are inspected manually to validate and interpret the automated results 
 and to illustrate how variability-related changes manifest in practice.
 
-\subsection{Overview of Analysed Commits}
+\subsection{Overall Results}
 
-Across all subject systems, the analysis processes each repository commit by commit using DiffDetective 
-together with the custom analysis component \texttt{MyAnalysis}. For each commit, a variability-aware 
-diff is computed and classified, and the corresponding commit message is analysed. This enables a 
-combined view of structural changes to variability and the developers’ textual explanations of those 
-changes.
+Overall, the analysis demonstrates that variability-aware commit classification can be combined with commit-message inspection to study how presence conditions evolve in practice. Using DiffDetective together with MyAnalysis, commits that modify presence conditions are identified and classified according to their variability semantics, enabling higher-level distinctions such as Refactoring and Reconfiguration. This provides a basis for relating structural variability edits to potential developer mistakes that are self-reported through commit messages.
 
-As an initial step, smaller repositories were analysed to validate the feasibility and correctness of 
-the approach. The first subject system was \texttt{xterm}, which contains approximately 112 commits in 
-the analysed revision range. This repository was chosen deliberately because of its limited size, which 
-made it possible to manually inspect results and correlate automated classifications with actual code 
-changes in detail.
+A key observation is that the effectiveness of self-reported bug detection depends heavily on how developers write commit messages. In the analysed revision range of xterm, commit messages are typically short and identifier-like, as illustrated in Figure~\ref{fig:commit-message-styles}. The keyword-based heuristic therefore flags no commits as bug-related. In contrast, in the analysed subset of libssh, commit messages frequently contain explicit corrective terms (e.g., ``fix'', ``bug'', ``error''), also illustrated in Figure~\ref{fig:commit-message-styles}, and many commits are consequently classified as bug-indicating. This difference suggests that the absence of bug-indicating keywords does not imply the absence of variability-related issues but rather reflects how developers document changes.
 
-After validating the approach on \texttt{xterm}, larger repositories such as \texttt{libssh} were 
-analysed. These systems contain substantially more commits and more complex variability, allowing the 
-evaluation to assess how the approach scales and how well it performs on realistic, non-trivial 
-software systems.
-
-DiffDetective traverses the complete commit history of each subject system (for example, 5\,352 commits 
-for \texttt{libssh}). However, the evaluation dataset reported in Table~4.1 is based on the commits that 
-were successfully recorded in the per-commit output logs (\texttt{commit\_analysis\_log.txt} and 
-\texttt{commit\_messages.txt}). The analysis is executed with multi-threading enabled, and the output 
-files are reset during initialisation. As a result, the final log files may contain only a subset of 
-the traversed commits. Consequently, the number of commits reported in Table~4.1 should be interpreted 
-as the number of commits available for evaluation in the produced logs, rather than the total number of 
-commits in the repository history.
-
-For \texttt{xterm}, 111 commits were analysed, none of which were classified as bug-related based on 
-commit-message analysis.
-
-For \texttt{libssh}, DiffDetective traversed the full commit history of 5\,352 commits. However, due to 
-repeated initialisation of the analysis and overwriting of output files during multi-threaded execution, 
-the final per-commit log contains only a subset of the traversed commits. Consequently, quantitative 
-results for \texttt{libssh} are interpreted qualitatively rather than as absolute frequencies.
-
-Despite this limitation, the analysed subset of \texttt{libssh} commits shows a clear tendency toward 
-corrective maintenance. A substantial number of commits in the final log explicitly indicate corrective 
-intent in their messages (e.g.\ using terms such as \emph{fix}, \emph{bug}, or \emph{error}). This 
-observation suggests that developers in \texttt{libssh} frequently document errors and fixes in commit 
-messages, particularly when modifying conditional compilation logic, and stands in contrast to the 
-\texttt{xterm} repository, where such intent is largely absent from commit messages.
+In addition, the results indicate that higher-level variability edits often occur in a corrective maintenance context in actively maintained systems. Manual inspection of selected commits supports this interpretation: bug-indicating commits classified as Refactoring or Reconfiguration frequently involve adjusting \#if/\#ifdef logic, , fixing incorrect or misplaced guards, or correcting configuration-specific behaviour. At the same time, real-world preprocessor code is not always well-structured (e.g., unusual formatting or incomplete directive blocks). This causes parsing and annotation errors and means that some commits cannot be analysed reliably. The following subsections report the quantitative distributions and the qualitative observations in detail.
 
 
 \begin{figure}[t]
@@ -111,21 +76,14 @@ whereas libssh commits explicitly document corrective intent and error-related c
 \label{fig:commit-message-comparison}
 \end{figure}
 
-\subsection{Bug-Related Commits}
 
-In addition to the structural classification of variability-related changes, the analysis identifies
-commits that are likely related to bug fixing based on commit-message keywords. This approach follows
-prior work on self-admitted issues, which demonstrates that commit messages often encode developers’
-corrective intent and can therefore be used to study maintenance activities.
-
-The analysed subject systems differ strongly with respect to bug-related commits. In xterm, none
-of the analysed commits were classified as bug-related based on commit-message analysis. In
-contrast, the analysed subset of commits from libssh shows a clear tendency toward corrective
-maintenance, which can be seen in the figure Figure~\ref{fig:libssh_bug_reconfig}. A substantial number of commit messages
-explicitly contain terms such as \emph{fix}, \emph{bug}, \emph{error}, \emph{leak}, or \emph{segfault}.
-This observation is consistent with findings from self-admitted issues research, which report that
-developers frequently document defects and fixes directly in commit messages using natural
-language.
+\subsection{Quantitative Results}
+This section reports the quantitative results produced by running DiffDetective together with MyAnalysis on the selected subject systems. The measurements are derived from the per-commit output logs generated during the analysis (commit classifications and commit-messages). Quantitatively, the evaluation focuses on three aspects: (1) how frequently presence condition changes occur, (2) how these changes are distributed across DiffDetective’s variability edit classes (in particular Refactoring and Reconfiguration), and (3) how often commits with higher-level variability edits overlap with bug-indicating commit messages.
+For xterm, the analysis recorded 111 commits in the produced logs. Across these commits, none were classified as bug-related based on the keyword heuristic applied to commit messages. This result is consistent with the commit-message style in xterm, where messages are typically short, identifier-like (Figure~\ref{fig:commit-message-styles}) , and contain little descriptive information. As a consequence, commit-message-based bug detection yields no matches even if variability-related changes are present, illustrating that quantitative results based on self-reported intent depend strongly on how developers document their changes.
+For libssh, DiffDetective traversed the repository history (5,352 commits), but the quantitative dataset available for evaluation is limited to the subset of commits that remained in the final per-commit logs. Because the analysis was executed multiple times with multi-threading enabled and output files reset during initialisation, the resulting log files may include only part of the traversed history. Therefore, counts computed for libssh are interpreted as measurements on the recorded subset, rather than absolute frequencies over the full repository history. Despite this limitation, the available logs show a clear tendency towards corrective maintenance: many commit messages explicitly include bug-related terms such as fix, bug and error, and the heuristic correspondingly flags a portion of the recorded commits as bug-related.
+To connect variability edits to developer-reported mistakes, the key quantitative outcome is the overlap between Refactoring/Reconfiguration classifications and bug-indicating commit messages. In the recorded subset of libssh commits, a noticeable share of commits classified as Refactoring or Reconfiguration is also flagged as bug-related by the commit-message heuristic. This provides evidence that higher-level variability edits changes that restructure or adjust existing presence conditions rather than merely adding or deleting lines, frequently occur in the context of corrective intent, supporting the thesis focus on variability-related mistakes observable at the level of variability semantics.
+In addition to commit-level classifications, the analysis reports quantitative indicators of irregular variability usage through parsing and annotation errors encountered when extracting presence conditions from real-world codeFor libssh, the exported metadata reports line-continuation errors, unclosed annotations, and cases where extracted presence-condition formulas could not be parsed. These results quantify the extent to which preprocessor usage in practice can violate idealised assumptions of well-formed annotations, which impacts how reliably commits can be analysed and is therefore an important quantitative limitation of the evaluation.
+Overall, the quantitative results show that (i) the distribution and interpretability of bug-related commits depends strongly on repository-specific commit-message practices (as seen in the contrast between xterm and libssh, Figure~\ref{fig:commit-message-styles}), (ii) in libssh, many recorded commits reflect corrective intent, and (iii) within the recorded data, higher-level variability edits (Refactoring/Reconfiguration) frequently coincide with bug-indicating commit messages, suggesting a recurring link between presence condition evolution and developer-reported mistakes.
 
 
 \begin{figure}[t]
@@ -147,43 +105,20 @@ functionality being added.}
 \end{figure}
 
 
-The high occurrence of bug-related commits in \texttt{libssh} suggests that variability-related code
-is often involved in corrective maintenance. This is particularly evident in low-level system
-components that rely heavily on conditional compilation and configuration-dependent behaviour. In
-such contexts, incorrect or incomplete presence conditions can easily lead to build failures,
-runtime errors, or missing functionality, which developers subsequently address by reconfiguring or
-refactoring preprocessor directives.
 
-Manual inspection of selected bug-related commits confirms that the automated classification aligns
-with the actual changes in most cases. Typical examples include fixing incorrect \texttt{\#ifdef}
-conditions, adding missing error checks under specific configurations, or correcting
-platform-dependent compilation paths. At the same time, the analysis also reveals limitations of the
-keyword-based heuristic. Some commits are classified as bug-related even though they primarily address
-maintainability concerns, such as fixing build warnings or cleaning up configuration logic. These
-cases illustrate that commit-message-based classification captures corrective intent rather than
-definitive runtime faults and should be interpreted accordingly.
+\subsection{Qualitative Results}
+This subsection complements the quantitative measurements with a qualitative inspection of selected commits. The goal is; firstly, to validate that the automated classifications produced by DiffDetective and MyAnalysis correspond to the actual changes in the code, and second, to illustrate how variability-related changes appear in practice when developers modify presence conditions. The qualitative analysis therefore focuses on commits classified as Refactoring or Reconfiguration, and in particular on those whose commit messages indicate bug-fixing intent (self-reported bugs).
+Across the inspected commits, the commit messages generally provide useful context in repositories where developers describe changes in natural language, as observed for libssh(Figure~\ref{fig:commit-message-styles}). For example, messages such as ``Fix the ifdefs.'' align closely with the corresponding DiffDetective classification of Reconfiguration (Figure~\ref{fig:bug-related-reconfiguration}), which indicates that an existing presence condition was adjusted rather than new variability being introduced. Manual inspection of these commits confirms that the changes are typically small in terms of raw text, but semantically meaningful in terms of the configuration space affected by conditional compilation (cite Apel featured..). In practice, the inspected reconfiguration commits often modify the structure of \#if/\#ifdef logic, e.g., by correcting a condition, moving a guard or updating which configurations include a code block.
+A recurring observation is that many bug-fixing commits correct misconfigurations rather than fixing a traditional bug in one specific configuration.
+Several commits fix conditions that were either too broad (including code in configurations where it should be excluded) or too narrow (excluding code where it is required), and these mistakes are often discovered only after a build failure or a platform-specific problem that only appears under certain configurations. In such cases, the variability-aware diff helps make the semantic impact explicit: even though the textual edit may be limited to a single directive, it changes the presence condition under which code is compiled, which can affect multiple variants at once.
+In addition to reconfigurations, commits classified as Refactoring often represent changes where developers restructure conditional compilation without intending to change functionality. The inspected refactoring commits frequently involve moving preprocessor directives, restructuring multi-level conditions or simplifying the layout of variability annotations. While these edits are typically motivated by maintainability, they can still introduce mistakes when guards are moved to an incorrect scope or when the refactoring unintentionally alters the logical condition. In the inspected sample, this is reflected by cases where a commit is classified as Refactoring, yet the commit message still signals corrective intent, suggesting that refactoring and bug fixing can be intertwined when variability logic is complex.
+The qualitative inspection also highlights limitations of the commit-message heuristic. Some commits flagged as bug-related appear to address issues such as build warnings, code cleanup or portability adjustments rather than definitive runtime faults. However, these commits still represent corrective intent in the sense that developers explicitly describe them as fixing something and the associated presence-condition edits can be relevant for understanding how developers correct variability-related problems over time. For this reason, the qualitative analysis interprets ``bug-related'' as an indicator of developer-reported correction rather than a precise fault class.
+Finally, inspecting commits that triggered parsing or annotation errors shows that real-world preprocessor code is not always written in a clean and consistent way. For example, unusual formatting, commented-out directives or long directives split across multiple lines can make it difficult to extract presence conditions reliably. As a result, some commits cannot be classified automatically, which highlights a practical limitation of variability-aware analysis on real repositories.
+Overall, the qualitative results support the main quantitative findings: variability edits (Refactoring and Reconfiguration) occur in real systems and often overlap with developer-reported corrective intent. The manual inspection confirms that these commits frequently involve adjustments to preprocessor guards and presence-condition logic that have non-local semantic effects across configurations, illustrating how developer mistakes related to variability can arise and how they are subsequently corrected in practice.
 
 \subsection{Topic Analysis of Commit Messages}
-
-To further interpret variability-related changes, the commit messages associated with refactoring
-and reconfiguration edits were analysed to identify recurring themes. The results reveal a small and
-stable set of keywords that occur repeatedly across variability-related commits, providing insight
-into the motivations behind variability evolution.
-
-Frequently occurring terms include \emph{fix}, \emph{ifdef}, \emph{add}, \emph{support}and
-configuration-related identifiers. The repeated presence of these keywords indicates that changes to
-variability are predominantly driven by corrective maintenance and configuration management rather
-than by the introduction of new functionality. In particular, references to conditional compilation
-suggest that developers frequently revise and correct presence conditions to resolve
-misconfigurations or build-related issues. Results from the topic analysis, keyword frequencies, is illustrated in Figure~\ref{fig:topic-analysis-keywords}.'
-
-The recurring nature of these terms also suggests that the semantic impact of changes to conditional
-compilation directives is difficult to anticipate. Although edits to \texttt{\#if}- or
-\texttt{\#ifdef}-based logic often appear local, they can alter the set of configurations in which
-code is included, leading to unintended effects that only become visible later. Overall, the topic
-analysis supports the conclusion that variability evolution in real-world systems is largely driven
-by ongoing maintenance and error correction, highlighting variability management as a recurring and
-non-trivial challenge during software evolution.
+To support interpretation of the variability-related edits, a lightweight keyword-frequency analysis was applied to commit messages associated with commits classified as \emph{Refactoring} or \emph{Reconfiguration}. The purpose of this step is not to derive detailed semantic topics, but to provide a simple overview of which activities and contexts are mentioned most often in commit messages when developers modify presence conditions.
+The resulting keyword frequencies (Figure~\ref{fig:keyword-frequency}) show that variability-related commits are often described using corrective and configuration-oriented terms. Frequent tokens such as \emph{fix} and references to conditional compilation (e.g., \emph{ifdef}) suggest that presence-condition changes commonly occur in the context of maintenance and adjustment of configuration-dependent behaviour. Overall, the topic analysis provides supporting evidence that refactoring and reconfiguration edits are frequently accompanied by commit messages that emphasise correction and configuration management rather than feature addition.
 
 
 \begin{figure}[t]
